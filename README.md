@@ -1,10 +1,14 @@
 ![](https://i.imgur.com/UTG7q4b.png)
 >Trabalho Prático 1 da disciplina de Algoritmos e Estruturas de Dados 1.
 
+
+
+
+
 O Projeto apresenta um sistema de controle de voo de um aeroporto.
 O sistema usa conteudo visto em sala de aula,como alocação dinamica de memoria e lista encadeada.
 
-## Instalaão
+## Instalação
 
 OS X & Linux:
 
