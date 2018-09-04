@@ -1,8 +1,9 @@
 typedef struct DadoVoo{
   int VID;
   int Hora_Decola;
-  int Hora_Pouso;      //Variaveis para numero do Voo,Horario de decolagem,Horario de pouso,Horario previsto e numero da pista.
+  int Minuto_Decola;     //Variaveis para numero do Voo,Horario de decolagem,Horario de pouso,Horario previsto e numero da pista.
   int Hora_Previsto;
+  int Minuto_Previsto;
   int Pista;
   char Aeroporto_Partida[30];
   char Aeroporto_Chegada[30];
