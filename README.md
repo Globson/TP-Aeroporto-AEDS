@@ -34,5 +34,5 @@ Veja `LICENSE` para mais informações.
 
 
 * **Yuri Dimitre**  - [Numb4r](https://github.com/Numb4r)
-* **Samuel Sena** - [Grobson](https://github.com/Globson)
+* **Samuel Sena** - [Globson](https://github.com/Globson)
 * **Aryel Penido** - [AryelPenido](https://github.com/AryelPenido)
