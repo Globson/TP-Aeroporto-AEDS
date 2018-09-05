@@ -14,15 +14,13 @@ void InicializaVoo(Voo* Modelo){
   strcpy(Modelo->Aeroporto_Partida,"");}
 void SetVID(Voo* Modelo){Modelo->VID=(rand()%1000);}
 void SetHora_Minuto_Decola(Voo* Modelo){
-  printf("Horas da partida:");
-  scanf("%d",&Modelo->Hora_Decola);
-  printf("\nMinutos da partida:");
-  scanf("%d",&Modelo->Minuto_Decola);}
+  char p1[1];
+  printf("Entre com a hora e os minutos da partida separados por dois pontos:");
+  scanf("%d%c%d",&Modelo->Hora_Decola,p1,&Modelo->Minuto_Decola);}
 void SetHora_Minuto_Previsto(Voo* Modelo){
-  printf("Horas da chegada prevista:");
-  scanf("%d",&Modelo->Hora_Previsto);
-  printf("\nMinutos da chegada prevista:");
-  scanf("%d",&Modelo->Minuto_Previsto);}
+  char p2[1];
+  printf("Entre com a hora e minutos de chegada prevista separados por dois pontos:");
+  scanf("%d%c%d",&Modelo->Hora_Previsto,p2,&Modelo->Minuto_Previsto);}
 void SetPista(Voo* Modelo){
   printf("\nPista de decolagem?:");
   scanf("%d",&Modelo->Pista );}
