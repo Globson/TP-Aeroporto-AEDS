@@ -3,6 +3,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
+
+
+//Inicializacao
 void InicializaVoo(Voo* Modelo){
   Modelo->VID = 0;
   Modelo->Hora_Decola = 0;
@@ -12,7 +16,12 @@ void InicializaVoo(Voo* Modelo){
   Modelo->Pista = 0;
   strcpy(Modelo->Aeroporto_Chegada,"");
   strcpy(Modelo->Aeroporto_Partida,"");}
-void SetVID(Voo* Modelo){Modelo->VID=(rand()%1000);}
+//------------------------------------------------------------------------------------------------------
+
+// SETS
+void SetVID(Voo* Modelo){
+  srand(time(NULL));
+  Modelo->VID=(rand()%1000);}
 void SetHora_Minuto_Decola(Voo* Modelo){
   char p1[1];
   printf("Entre com a hora e os minutos da partida separados por dois pontos:");
@@ -30,9 +39,13 @@ void SetAeroporto_Partida(Voo* Modelo){
 void SetAeroporto_Chegada(Voo* Modelo){
   printf("\nAeroporto de chegada:");
   fgets(Modelo->Aeroporto_Chegada,30,stdin);}
+//------------------------------------------------------------------------------------------------------
+
+// GETS
 void GetVID(Voo Modelo){printf("\n%d",Modelo.VID);}
 void GetHora_Minuto_Decola(Voo Modelo){printf("\n%d:%d",Modelo.Hora_Decola,Modelo.Minuto_Decola);}
 void GetHora_Minuto_Previsto(Voo Modelo){printf("\n%d:%d",Modelo.Hora_Previsto,Modelo.Minuto_Previsto);}
 void GetPista(Voo Modelo){printf("\nPista:%d",Modelo.Pista);}
 void GetAeroporto_Partida(Voo Modelo){printf("\n%s",Modelo.Aeroporto_Partida);}
 void GetAeroporto_Chegada(Voo Modelo){printf("\n%s",Modelo.Aeroporto_Chegada);}
+//------------------------------------------------------------------------------------------------------
