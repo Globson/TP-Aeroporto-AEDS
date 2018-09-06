@@ -27,24 +27,26 @@ void SetVID(Voo* Modelo){
   Modelo->VID=(rand()%1000);}
 void SetHora_Minuto_Decola(Voo* Modelo, int hora,int minuto){
   Modelo->Hora_Decola = hora;
-  Modelo->Minuto_Decola = minuto;
+  Modelo->Minuto_Decola = minuto;}
 void SetHora_Minuto_Previsto(Voo* Modelo,int hora,int minuto){
   Modelo->Hora_Previsto = hora;
   Modelo->Minuto_Previsto = minuto;}
-void SetPista(Voo* Modelo){
-  Modelo->Pista;}
-void SetAeroporto_Partida(Voo* Modelo){
-  Modelo->Aeroporto_Partida;}
-void SetAeroporto_Chegada(Voo* Modelo){
-  Modelo->Aeroporto_Chegada;}
+void SetPista(Voo* Modelo,int pista){
+  Modelo->Pista = pista;}
+void SetAeroporto_Partida(Voo* Modelo,char aeroporto[]){
+  strcpy(Modelo->Aeroporto_Partida,aeroporto);}
+void SetAeroporto_Chegada(Voo* Modelo,char aeroporto[]){
+  strcpy(Modelo->Aeroporto_Chegada,aeroporto);}
 //------------------------------------------------------------------------------------------------------
 
 // GETS
 //TODO:Retornar ao invez de printar os valores repassados
-void GetVID(Voo Modelo){printf("%d",Modelo.VID);}
+int GetVID(Voo Modelo){return Modelo.VID;}
+ //TODO:Verificar como retornar de forma apropriada as horas e minutos juntos
 void GetHora_Minuto_Decola(Voo Modelo){printf("%d:%d",Modelo.Hora_Decola,Modelo.Minuto_Decola);}
 void GetHora_Minuto_Previsto(Voo Modelo){printf("%d:%d",Modelo.Hora_Previsto,Modelo.Minuto_Previsto);}
-void GetPista(Voo Modelo){printf("%d",Modelo.Pista);}
-void GetAeroporto_Partida(Voo Modelo){printf("%s",Modelo.Aeroporto_Partida);}
-void GetAeroporto_Chegada(Voo Modelo){printf("%s",Modelo.Aeroporto_Chegada);}
+int GetPista(Voo Modelo){return Modelo.Pista;}
+//TODO: Verificar possivel  quebra de seguranca com o retorno do endereco do Modelo
+char* GetAeroporto_Partida(Voo Modelo){return Modelo.Aeroporto_Partida;}
+char* GetAeroporto_Chegada(Voo Modelo){return Modelo.Aeroporto_Chegada;}
 //------------------------------------------------------------------------------------------------------
