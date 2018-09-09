@@ -14,7 +14,9 @@ void InicializaVoo(Voo* Modelo){
   Modelo->Minuto_Previsto= 0;
   Modelo->Pista = 0;
   strcpy(Modelo->Aeroporto_Chegada,"");
-  strcpy(Modelo->Aeroporto_Partida,"");}
+  strcpy(Modelo->Aeroporto_Partida,"");
+  strcpy(Modelo->CiaAerea,"");
+  strcpy(Modelo->Status,"");}
 //------------------------------------------------------------------------------------------------------
 
 // SETS
@@ -37,6 +39,10 @@ void SetAeroporto_Partida(Voo* Modelo,char aeroporto[]){
   strcpy(Modelo->Aeroporto_Partida,aeroporto);}
 void SetAeroporto_Chegada(Voo* Modelo,char aeroporto[]){
   strcpy(Modelo->Aeroporto_Chegada,aeroporto);}
+void SetCiaAerea(Voo* Modelo,char ciaaerea[]){
+  strcpy(Modelo->CiaAerea,ciaaerea);}
+void SetStatus(Voo* Modelo,char status[]){
+  strcpy(Modelo->Status,status);}
 //------------------------------------------------------------------------------------------------------
 
 // GETS
@@ -49,4 +55,6 @@ int GetPista(Voo Modelo){return Modelo.Pista;}
 //TODO: Verificar possivel  quebra de seguranca com o retorno do endereco do Modelo
 char* GetAeroporto_Partida(Voo Modelo){return Modelo.Aeroporto_Partida;}
 char* GetAeroporto_Chegada(Voo Modelo){return Modelo.Aeroporto_Chegada;}
+char* GetCiaAerea(Voo Modelo){return Modelo.CiaAerea;}
+char* GetStatus(Voo Modelo){return Modelo.Status;}
 //------------------------------------------------------------------------------------------------------
