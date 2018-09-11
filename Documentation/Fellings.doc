@@ -3,4 +3,4 @@
 47 voos por hora ou 1128 por dia, fonte:http://g1.globo.com/distrito-federal/noticia/2014/11/aeroporto-do-df-passa-guarulhos-em-capacidade-de-voos-por-hora.html;
 >Os identificadores de voo são series randomicas de numeros inteiros
 >cada aeroporto terá duas pistas(dnv a base foi guarulhos);
-> Statu pode ser:"decolando,atrasado,embarcando,cancelado,confirmado";
+> Status pode ser:"decolando,atrasado,embarcando,cancelado,confirmado";
