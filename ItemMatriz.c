@@ -1,3 +1,3 @@
 #include <stdlib.h>
 #include <stdio.h>
-#inclide "../lib/ItemMatriz.h"
+#include "../lib/ItemMatriz.h"
