@@ -1,4 +1,4 @@
-#include "../Libs/Voo.h"
+#include "../Libs/Dados_Voo.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
