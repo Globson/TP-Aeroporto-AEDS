@@ -5,12 +5,12 @@ typedef struct ItemMatriz{
     int Ultima_Atualizacao;
 }Item_Matriz;
 //Inicializacao
-void InicializaMatriz(Item_Matriz* Modelo);
+void Inicializa_Matriz(Item_Matriz* Modelo);
 //------------------------------------------------------------------------------------------------------
 //GETS
-void GetLista_de_Voos(Item_Matriz* Modelo);
-void GetNumero_de_Voos(Item_Matriz* Modelo);
-void GetUltima_Atualizacao(Item_Matriz* Modelo);
+TLista* GetLista_de_Voos(Item_Matriz* Modelo);
+int GetNumero_de_Voos(Item_Matriz* Modelo);
+int GetUltima_Atualizacao(Item_Matriz* Modelo);
 //------------------------------------------------------------------------------------------------------
 //SETS
 void SetLista_de_Voos(Item_Matriz* Modelo, TLista* pLista);
