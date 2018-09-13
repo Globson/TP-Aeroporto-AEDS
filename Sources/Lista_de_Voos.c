@@ -11,7 +11,7 @@ void Inicia_Lista(TLista* pLista){
 int Lista_Vazia(TLista* pLista){
   return(pLista->pPrimeiro == pLista->pUltimo);} //Retorna 1 para caso a afirmação seja verdade e 0 caso não.//
 int Insere_Voo(TLista* pLista){} //Ainda pensando em como efetuar a entrada baseada na comparação entre horas de voos,Att Grobs//
-int Remove_Voo(TLista* pLista,Voo* pVoo){
+int Remove_Voo(TLista* pLista,TVoo* pVoo){
   TCelula* pAux;
   if(Lista_Vazia(pLista))
     return 0;
@@ -20,7 +20,7 @@ int Remove_Voo(TLista* pLista,Voo* pVoo){
   pLista->pPrimeiro = pLista->pPrimeiro->pProx;
   free(pAux);
   return 1;}
-int Procura_Voo(TLista* pLista,Voo* pVoo){
+int Procura_Voo(TLista* pLista,TVoo* pVoo){
   if(Lista_Vazia(pLista))
     return 0; //Falso caso lista esteja vazia.//
 }

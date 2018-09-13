@@ -9,28 +9,28 @@ typedef struct DadoVoo{
   char Aeroporto_Chegada[30];
   //char CiaAerea[30];
   //char Status[30];
-} Voo;
+} TVoo;
 //Inicializacao
-void InicializaVoo(Voo* Modelo);
+void InicializaVoo(TVoo* Modelo);
 //------------------------------------------------------------------------------------------------------
 //SETS
-void SetVID(Voo* Modelo);  //Variaveis declaradas para atribuições dentro da struct.
-void SetHora_Minuto_Decola(Voo* Modelo,int hora,int minuto);
-void SetHora_Minuto_Previsto(Voo* Modelo,int hora,int minuto);
-void SetPista(Voo* Modelo,int pista);
-void SetAeroporto_Partida(Voo* Modelo,char aeroporto[]);
-void SetAeroporto_Chegada(Voo* Modelo,char aeroporto[]);
-//void SetCiaAerea(Voo* Modelo,char ciaaerea[]);
-//void SetStatus(Voo* Modelo,char status[]);
+void SetVID(TVoo* Modelo);  //Variaveis declaradas para atribuições dentro da struct.
+void SetHora_Minuto_Decola(TVoo* Modelo,int hora,int minuto);
+void SetHora_Minuto_Previsto(TVoo* Modelo,int hora,int minuto);
+void SetPista(TVoo* Modelo,int pista);
+void SetAeroporto_Partida(TVoo* Modelo,char aeroporto[]);
+void SetAeroporto_Chegada(TVoo* Modelo,char aeroporto[]);
+//void SetCiaAerea(TVoo* Modelo,char ciaaerea[]);
+//void SetStatus(TVoo* Modelo,char status[]);
 //------------------------------------------------------------------------------------------------------
 //GETS
-int GetVID(Voo Modelo);
-void GetHora_Minuto_Decola(Voo Modelo);
-void GetHora_Minuto_Previsto(Voo Modelo);
-int GetPista(Voo Modelo);
-char* GetAeroporto_Partida(Voo Modelo);
-char* GetAeroporto_Chegada(Voo Modelo);
-//char* GetCiaAerea(Voo Modelo);
-//char* GetStatus(Voo Modelo);
+int GetVID(TVoo Modelo);
+void GetHora_Minuto_Decola(TVoo Modelo);
+void GetHora_Minuto_Previsto(TVoo Modelo);
+int GetPista(TVoo Modelo);
+char* GetAeroporto_Partida(TVoo Modelo);
+char* GetAeroporto_Chegada(TVoo Modelo);
+//char* GetCiaAerea(TVoo Modelo);
+//char* GetStatus(TVoo Modelo);
 
 //------------------------------------------------------------------------------------------------------
