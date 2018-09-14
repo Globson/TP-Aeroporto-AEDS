@@ -23,10 +23,10 @@ void SetHora_Ultima_Atualizacao(tMatriz* pMatriz){
 
 // GETS
 char* GetData(tMatriz pMatriz){
-    return pMatriz->Data;
+    return pMatriz.Data;
 }
 char* GetHora_Ultima_Atualizacao(tMatriz pMatriz){
-    return pMatriz->Hora_Ultima_Atualizacao;
+    return pMatriz.Hora_Ultima_Atualizacao;
 }
 //------------------------------------------------------------------------------------------------------
 
@@ -34,12 +34,13 @@ void Inicia_Matriz(tMatriz* pMatriz){
     pMatriz->Data = 0;
     pMatriz->Total_De_Voos = 0;
     strcpy(pMatriz->Hora_Ultima_Atualizacao,"");
+    int i = 0,j = 0;
 
-    /*for (size_t i = 0; i < count; i++) {
-        for (size_t j = 0; j < count; j++) {
-            pMatriz->M[i][j] = NULL; // Q
+    for ( i = 0; i < count; i++) {
+        for (j = 0; j < count; j++) {
+            Inicializa_Matriz(&pMatriz->M[i][j]);
         }
-    }*/
+    }
 }
 int Insere_Voo_Matriz(tMatriz* pMatriz,TVoo* Voo){
     //Vai ser pego a hora para achar a posicao na matriz e

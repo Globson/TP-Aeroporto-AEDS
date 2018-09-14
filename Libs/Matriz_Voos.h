@@ -5,8 +5,8 @@
 typedef struct {
   Item_Matriz M[24][24];
   int Total_De_Voos;
-  char Data;
-  char Hora_Ultima_Atualizacao;
+  char Data[20];
+  char Hora_Ultima_Atualizacao[20];
 }tMatriz;
 
 
