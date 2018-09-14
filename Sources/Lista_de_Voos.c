@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "../Libs/Lista_de_Voos.h"
 #include "../Libs/Dados_Voo.h"
 
@@ -16,46 +17,43 @@ int Lista_Vazia(TLista* pLista){
 
 
 int Insere_Voo(TLista* pLista,TVoo* pVoo){             //Se inserido com sucesso retorna 1, se nao foi inserido por falta de memoria de malloc retorna 0.//
-  if((Lista_Vazia(pLista)) == 1){
-    pLista->pPrimeiro->pProx=(struct Celula*)malloc(sizeof(TCelula));
-    if(pLista->pPrimeiro->pProx == NULL){return 0;}
-    pLista->pPrimeiro->pProx->Item=pVoo;
-    pLista->pUltimo=pLista->pPrimeiro->pProx;
-    return 1;}
-  else{
-    TCelula **pAux,*nova;
-    pAux=&pLista->pPrimeiro;
-    while(pVoo->Hora_Decola >= *pAux->pProx->Item->Hora_Decola || *pAux->pProx != NULL){
-                    *pAux=*pAux->pProx;}
-    nova=(TCelula*)malloc(sizeof(TCelula));
-    if(nova == NULL){return 0}
-    nova->pProx=*pAux->pProx;
-    *pAux=nova;
-    if(nova->pProx == NULL){
-          TLista->pUltimo = nova;}
-    return 1;
-    }
-  }
+  TCelula *pAux_Prox,*pAux_Atual,*pNovo;
+  pNovo=(TCelula*)malloc(sizeof(TCelula));
+  if(pNovo == NULL){return 0;}
+  pNovo->Item = pVoo;
+  pAux_Atual=pLista->pPrimeiro;
+  pAux_Prox=pLista->pPrimeiro->pProx;
+  while(pAux_Prox != NULL){
+    if(strcmp((pAux_Prox->Item->Hora_Decola),(pVoo->Hora_Decola))>=0){break;}
+    pAux_Atual = pAux_Prox;
+    pAux_Prox = pAux_Prox->pProx;}
+  pNovo->pProx = pAux_Prox;
+  pAux_Atual->pProx = pNovo;
+  if(pLista->pUltimo->pProx != NULL){
+    pLista->pUltimo = pLista->pUltimo->pProx;
+    pLista->pUltimo->pProx = NULL;}
+  return 1;}
 
 
 
-
-
-TVoo* Remove_Voo(TLista* pLista,int VID_R){    //Essa função retorna o ponteiro do ItemVoo correspondente a celula eliminada da lista//
-  TCelula **pAux,*lixo;
+TVoo* Remove_Voo(TLista* pLista,int VID_R){    //Essa função retorna o ponteiro do ItemVoo correspondente a celula eliminada da lista e NULL caso VID n seja encontrado.//
+  TCelula *pAux_Atual,*pAux_Prox;
   TVoo* pVoo_Aux;
-  pAux=&pLista->pPrimeiro;
-  while(*pAux != NULL && *pAux->Item->VID != VID_R ){
-       if(*pAux->pProx->Item->VID == VID_R){
-            pVoo_Aux=*pAux->pProx->Item;
-            lixo=*pAux->pProx;
-            *pAux=lixo->pProx;
-            if(pAux== NULL){TLista->pUltimo = *pAux}
-            free(lixo);
-            return pVoo_Aux;}
-    *pAux= *pAux->pProx;}
+  if(pLista->pPrimeiro->pProx == NULL){return 0;}
+  pAux_Atual = pLista->pPrimeiro;
+  pAux_Prox = pLista->pPrimeiro->pProx;
+  while(pAux_Prox != NULL && pAux_Prox->Item->VID != VID_R ){
+            pAux_Atual = pAux_Prox;
+            pAux_Prox = pAux_Prox->pProx;}
+  if(pAux_Prox != NULL){
+    pVoo_Aux = pAux_Prox->Item;
+    pAux_Atual->pProx = pAux_Prox->pProx;
+    free(pAux_Prox);
+    if(pLista->pUltimo->pProx != NULL){
+      pLista->pUltimo = pLista->pUltimo->pProx->pProx;
+      pLista->pUltimo->pProx = NULL;}
+      return pVoo_Aux;}
     return NULL;}
-
 
 
 
@@ -65,3 +63,20 @@ TVoo* Procura_Voo(TLista* pLista,int VID_P){ // A função devolve o endereço d
   while(Aux !=NULL && Aux->Item->VID != VID_P){
     Aux=Aux->pProx;}
     return Aux->Item;}
+
+//ATENÇÃO APAGAR FUNÇÃO IMPRIME ANTES DE ENTREGAR// ->> FUNÇÃO CRIADA APENAS PARA TESTE DE LISTA<<-------
+void Imprime_Lista(TLista* pLista){ //--------------->> Função Apenas para teste separado <<----------------
+    TCelula* pAux;
+    pAux = pLista->pPrimeiro->pProx;
+    while(pAux != NULL){
+      printf("-------Inicio de Celula-------\n");
+      printf("VID: %d\n",pAux->Item->VID);
+      printf("Hora de Decolagem: %s\n",pAux->Item->Hora_Decola);
+      printf("Hora de Pouso Previsto: %s\n",pAux->Item->Hora_Previsto);
+      printf("Numero da Pista: %d\n",pAux->Item->Pista);
+      printf("Aeroporto de Chegada: %s\n",pAux->Item->Aeroporto_Chegada);
+      printf("Aeroporto de Partida: %s\n",pAux->Item->Aeroporto_Partida);
+      printf("---------Fim da Celula--------");
+      pAux=pAux->pProx;
+    }
+}
