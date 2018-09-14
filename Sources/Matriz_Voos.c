@@ -5,20 +5,43 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #define count  24
 
-void Inicia_Matriz(Matriz* pMatriz){
+
+
+//------------------------------------------------------------------------------------------------------
+
+// SETS
+void SetData(tMatriz* pMatriz){
+    strcpy(pMatriz->Data,__DATE__);
+}
+void SetHora_Ultima_Atualizacao(tMatriz* pMatriz){
+    strcpy(pMatriz->Hora_Ultima_Atualizacao,__TIME__);
+}
+//------------------------------------------------------------------------------------------------------
+
+// GETS
+char* GetData(tMatriz pMatriz){
+    return pMatriz->Data;
+}
+char* GetHora_Ultima_Atualizacao(tMatriz pMatriz){
+    return pMatriz->Hora_Ultima_Atualizacao;
+}
+//------------------------------------------------------------------------------------------------------
+
+void Inicia_Matriz(tMatriz* pMatriz){
     pMatriz->Data = 0;
     pMatriz->Total_De_Voos = 0;
     strcpy(pMatriz->Hora_Ultima_Atualizacao,"");
 
-    for (size_t i = 0; i < count; i++) {
+    /*for (size_t i = 0; i < count; i++) {
         for (size_t j = 0; j < count; j++) {
             pMatriz->M[i][j] = NULL; // Q
         }
-    }
+    }*/
 }
-int Insere_Voo_Matriz(Matriz* pMatriz TVoo* Voo){
+int Insere_Voo_Matriz(tMatriz* pMatriz,TVoo* Voo){
     //Vai ser pego a hora para achar a posicao na matriz e
     // dps chamar a funcao da lista daquela posicao da matriz
     return 0;
