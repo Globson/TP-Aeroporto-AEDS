@@ -6,15 +6,13 @@
 
 
 //Inicializacao
-void InicializaVoo(TVoo* Modelo){
-  Modelo->VID = 0;
-  Modelo->Hora_Decola = 0;
-  Modelo->Minuto_Decola = 0;
-  Modelo->Hora_Previsto = 0;
-  Modelo->Minuto_Previsto= 0;
-  Modelo->Pista = 0;
-  strcpy(Modelo->Aeroporto_Chegada,"");
-  strcpy(Modelo->Aeroporto_Partida,"");}
+void InicializaVoo(TVoo* pVoo){
+  pVoo->VID = 0;
+  strcpy(pVoo->Hora_Decola,"");
+  strcpy(pVoo->Hora_Previsto,"");
+  pVoo->Pista = 0;
+  strcpy(pVoo->Aeroporto_Chegada,"");
+  strcpy(pVoo->Aeroporto_Partida,"");}
 //------------------------------------------------------------------------------------------------------
 
 // SETS
@@ -25,16 +23,24 @@ void InicializaVoo(TVoo* Modelo){
 void SetVID(TVoo* pVoo){
   srand(time(NULL));
   pVoo->VID=(rand()%1000);}
-void SetHora_Minuto_Decola(TVoo* pVoo, int hora,int minuto){
-  pVoo->Hora_Decola = hora;
-  pVoo->Minuto_Decola = minuto;}
-void SetHora_Minuto_Previsto(TVoo* pVoo,int hora,int minuto){
-  pVoo->Hora_Previsto = hora;
-  pVoo->Minuto_Previsto = minuto;}
+
+
+void SetHora_Decola(TVoo* pVoo,char hora[]){
+  strcpy(pVoo->Hora_Decola,hora);}
+
+
+void SetHora_Previsto(TVoo* pVoo,char hora[]){
+  strcpy(pVoo->Hora_Previsto,hora);}
+
+
 void SetPista(TVoo* pVoo,int pista){
   pVoo->Pista = pista;}
+
+
 void SetAeroporto_Partida(TVoo* pVoo,char aeroporto[]){
   strcpy(pVoo->Aeroporto_Partida,aeroporto);}
+
+
 void SetAeroporto_Chegada(TVoo* pVoo,char aeroporto[]){
   strcpy(pVoo->Aeroporto_Chegada,aeroporto);}
 //------------------------------------------------------------------------------------------------------
@@ -43,12 +49,36 @@ void SetAeroporto_Chegada(TVoo* pVoo,char aeroporto[]){
 //TODO:Retornar ao invez de printar os valores repassados
 int GetVID(TVoo pVoo){return pVoo.VID;}
  //TODO:Verificar como retornar de forma apropriada as horas e minutos juntos
-void GetHora_Minuto_Decola(TVoo pVoo){printf("%d:%d",pVoo.Hora_Decola,pVoo.Minuto_Decola);}
-void GetHora_Minuto_Previsto(TVoo pVoo){printf("%d:%d",pVoo.Hora_Previsto,pVoo.Minuto_Previsto);}
+
+
+char* GetHora_Decola(TVoo pVoo){
+  char* Aux;
+  Aux = pVoo.Hora_Decola;
+  return Aux;}
+
+
+char* GetHora_Previsto(TVoo pVoo){
+  char* Aux;
+  Aux = pVoo.Hora_Previsto;
+  return Aux;}
+
+
 int GetPista(TVoo pVoo){return pVoo.Pista;}
+
+
 //TODO: Verificar possivel  quebra de seguranca com o retorno do endereco do Modelo
-char* GetAeroporto_Partida(TVoo pVoo){return pVoo.Aeroporto_Partida;}
-char* GetAeroporto_Chegada(TVoo pVoo){return pVoo.Aeroporto_Chegada;}
-//char* GetCiaAerea(TVoo Modelo){return Modelo.CiaAerea;}
-//char* GetStatus(TVoo Modelo){return Modelo.Status;}
+
+
+char* GetAeroporto_Partida(TVoo pVoo){
+  char* Aux;
+  Aux = pVoo.Aeroporto_Partida;
+  return Aux;}
+
+
+
+char* GetAeroporto_Chegada(TVoo pVoo){
+  char* Aux;
+  Aux = pVoo.Aeroporto_Chegada;
+  return Aux;}
+
 //------------------------------------------------------------------------------------------------------
