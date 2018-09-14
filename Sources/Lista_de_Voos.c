@@ -60,13 +60,13 @@ TVoo* Remove_Voo(TLista* pLista,int VID_R){    //Essa função retorna o ponteir
 TVoo* Procura_Voo(TLista* pLista,int VID_P){ // A função devolve o endereço do TipoVoo que contem o VID entrado e NULL caso n exista.//
   TCelula* Aux;
   Aux= pLista->pPrimeiro->pProx;
-  while(Aux !=NULL && Aux->Item->VID != VID_P){
+  while(Aux != NULL && Aux->Item->VID != VID_P){
     Aux=Aux->pProx;}
   if(Aux->Item->VID == VID_P){
     return Aux->Item;}
-<<<<<<< HEAD
     else{return NULL;}
-=======
+  }
+
 
 //ATENÇÃO APAGAR FUNÇÃO IMPRIME ANTES DE ENTREGAR// ->> FUNÇÃO CRIADA APENAS PARA TESTE DE LISTA<<-------
 void Imprime_Lista(TLista* pLista){ //--------------->> Função Apenas para teste separado <<----------------
@@ -83,5 +83,4 @@ void Imprime_Lista(TLista* pLista){ //--------------->> Função Apenas para tes
       printf("---------Fim da Celula--------");
       pAux=pAux->pProx;
     }
->>>>>>> e187772fa08729dfd8d3c2d15d65a13276853001
 }
