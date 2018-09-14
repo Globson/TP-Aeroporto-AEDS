@@ -5,32 +5,32 @@ typedef struct DadoVoo{
   int Hora_Previsto;
   int Minuto_Previsto;
   int Pista;
-  char Aeroporto_Partida[30];
-  char Aeroporto_Chegada[30];
+  char Aeroporto_Partida[5];
+  char Aeroporto_Chegada[5];
   //char CiaAerea[30];
   //char Status[30];
 } TVoo;
 //Inicializacao
-void InicializaVoo(TVoo* Modelo);
+void InicializaVoo(TVoo* pVoo);       //pVoo é um ponteiro para o tipo TVoo.
 //------------------------------------------------------------------------------------------------------
 //SETS
-void SetVID(TVoo* Modelo);  //Variaveis declaradas para atribuições dentro da struct.
-void SetHora_Minuto_Decola(TVoo* Modelo,int hora,int minuto);
-void SetHora_Minuto_Previsto(TVoo* Modelo,int hora,int minuto);
-void SetPista(TVoo* Modelo,int pista);
-void SetAeroporto_Partida(TVoo* Modelo,char aeroporto[]);
-void SetAeroporto_Chegada(TVoo* Modelo,char aeroporto[]);
-//void SetCiaAerea(TVoo* Modelo,char ciaaerea[]);
-//void SetStatus(TVoo* Modelo,char status[]);
+void SetVID(TVoo* pVoo);  //Variaveis declaradas para atribuições dentro da struct.
+void SetHora_Minuto_Decola(TVoo* pVoo,int hora,int minuto);
+void SetHora_Minuto_Previsto(TVoo* pVoo,int hora,int minuto);
+void SetPista(TVoo* pVoo,int pista);
+void SetAeroporto_Partida(TVoo* pVoo,char aeroporto[]);
+void SetAeroporto_Chegada(TVoo* pVoo,char aeroporto[]);
+//void SetCiaAerea(TVoo* pVoo,char ciaaerea[]);
+//void SetStatus(TVoo* pVoo,char status[]);
 //------------------------------------------------------------------------------------------------------
 //GETS
-int GetVID(TVoo Modelo);
-void GetHora_Minuto_Decola(TVoo Modelo);
-void GetHora_Minuto_Previsto(TVoo Modelo);
-int GetPista(TVoo Modelo);
-char* GetAeroporto_Partida(TVoo Modelo);
-char* GetAeroporto_Chegada(TVoo Modelo);
-//char* GetCiaAerea(TVoo Modelo);
-//char* GetStatus(TVoo Modelo);
+int GetVID(TVoo pVoo);
+void GetHora_Minuto_Decola(TVoo pVoo);
+void GetHora_Minuto_Previsto(TVoo pVoo);
+int GetPista(TVoo pVoo);
+char* GetAeroporto_Partida(TVoo pVoo);
+char* GetAeroporto_Chegada(TVoo pVoo);
+//char* GetCiaAerea(TVoo pVoo);
+//char* GetStatus(TVoo pVoo);
 
 //------------------------------------------------------------------------------------------------------

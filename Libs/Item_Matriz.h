@@ -5,14 +5,14 @@ typedef struct ItemMatriz{
     int Ultima_Atualizacao;
 }Item_Matriz;
 //Inicializacao
-void Inicializa_Matriz(Item_Matriz* Modelo);
+void Inicializa_Matriz(Item_Matriz* pI_Matriz);          //pI_Matriz é um ponteiro para o item matriz
 //------------------------------------------------------------------------------------------------------
 //GETS
-TLista* GetLista_de_Voos(Item_Matriz* Modelo);
-int GetNumero_de_Voos(Item_Matriz* Modelo);
-int GetUltima_Atualizacao(Item_Matriz* Modelo);
+TLista* GetLista_de_Voos(Item_Matriz* pI_Matriz);
+int GetNumero_de_Voos(Item_Matriz* pI_Matriz);
+int GetUltima_Atualizacao(Item_Matriz* pI_Matriz);
 //------------------------------------------------------------------------------------------------------
 //SETS
-void SetLista_de_Voos(Item_Matriz* Modelo, TLista* pLista);
-void SetNumero_de_Voos(Item_Matriz* Modelo,int numero_voos);
-void SetUltima_AtualizacaoO(Item_Matriz* Modelo, int ultima_atualizacao);
+void SetLista_de_Voos(Item_Matriz* pI_Matriz, TLista* pLista);
+void SetNumero_de_Voos(Item_Matriz* pI_Matriz,int numero_voos);
+void SetUltima_AtualizacaoO(Item_Matriz* pI_Matriz, int ultima_atualizacao);
