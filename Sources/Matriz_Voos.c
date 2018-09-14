@@ -31,7 +31,7 @@ char* GetHora_Ultima_Atualizacao(tMatriz pMatriz){
 //------------------------------------------------------------------------------------------------------
 
 void Inicia_Matriz(tMatriz* pMatriz){
-    pMatriz->Data = 0;
+    strcpy(pMatriz->Data,"");
     pMatriz->Total_De_Voos = 0;
     strcpy(pMatriz->Hora_Ultima_Atualizacao,"");
     int i = 0,j = 0;
