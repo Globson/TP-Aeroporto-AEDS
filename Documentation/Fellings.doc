@@ -4,3 +4,6 @@
 >Os identificadores de voo são series randomicas de numeros inteiros
 >cada aeroporto terá duas pistas(dnv a base foi guarulhos);
 > Status pode ser:"decolando,atrasado,embarcando,cancelado,confirmado";
+>Na matriz voos,colunas serao a Hora_Decola e linhas hora prevista
+
+Copyright (c) 2018 Copyright Holder All Rights Reserved.
