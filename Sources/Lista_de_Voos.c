@@ -64,4 +64,7 @@ TVoo* Procura_Voo(TLista* pLista,int VID_P){ // A função devolve o endereço d
   Aux= pLista->pPrimeiro->pProx;
   while(Aux !=NULL && Aux->Item->VID != VID_P){
     Aux=Aux->pProx;}
+  if(Aux->Item->VID == VID_P){
     return Aux->Item;}
+    else{return NULL;}
+}
