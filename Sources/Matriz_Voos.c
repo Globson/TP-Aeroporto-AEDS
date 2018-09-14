@@ -22,11 +22,11 @@ void SetHora_Ultima_Atualizacao(tMatriz* pMatriz){
 //------------------------------------------------------------------------------------------------------
 
 // GETS
-char* GetData(tMatriz pMatriz){
-    return pMatriz.Data;
+char* GetData(tMatriz* pMatriz){
+    return pMatriz->Data;
 }
-char* GetHora_Ultima_Atualizacao(tMatriz pMatriz){
-    return pMatriz.Hora_Ultima_Atualizacao;
+char* GetHora_Ultima_Atualizacao(tMatriz* pMatriz){
+    return pMatriz->Hora_Ultima_Atualizacao;
 }
 //------------------------------------------------------------------------------------------------------
 
