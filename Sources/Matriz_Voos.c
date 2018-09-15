@@ -64,7 +64,7 @@ TVoo* Remove_Voo_Matriz(tMatriz* pMatriz,int VID){
     TVoo* Voo;
     for ( size_t i = 0; i < count; i++) {
         for ( size_t j = 0; j < count; j++) {
-            Voo=Remove_Voo(pMatriz->M[i][j]->pLista,VID);
+            Remove_Voo(pMatriz->M[i][j]->pLista,Voo,VID);
             (pMatriz->M[i][j]->Numero_de_Voos-=1);//não consegui fazer com SetNumero_de_Voos
         }
     }
@@ -78,7 +78,7 @@ TVoo* Procurar_Voo_Matriz(tMatriz* pMatriz,int VID){
     TVoo* Voo;
     for (size_t i = 0; i < count; i++) {
         for (size_t j = 0; j < count; j++) {
-            Voo = Procura_Voo(pMatriz->M[i][j]->pLista,VID);
+            Procura_Voo(pMatriz->M[i][j]->pLista,Voo,VID);
         }
     }
     return Voo;
@@ -96,10 +96,10 @@ void Imprimir_Voos_Decolagem_Pouso(tMatriz* pMatriz,char Hora_Decola,char Hora_P
             Aux= pMatriz->M[i][j]->pLista->pPrimeiro->pProx;
             printf("|Partida: %d /n Previsao: %d\n|",i,j );
             while(Aux != NULL){
-                printf("|VID: %d\n",(Aux->Item->VID) );
-                printf("|Pista: %d\n",(Aux->Item->Pista));
-                printf("|Aeroporto Partida: %s\n",(Aux->Item->Aeroporto_Partida));
-                printf("|Aeroporto Chegada: %s/n",(Aux->Item->Aeroporto_Chegada));
+                printf("|VID: %d\n",(Aux->Item.VID) );
+                printf("|Pista: %d\n",(Aux->Item.Pista));
+                printf("|Aeroporto Partida: %s\n",(Aux->Item.Aeroporto_Partida));
+                printf("|Aeroporto Chegada: %s/n",(Aux->Item.Aeroporto_Chegada));
                 Aux=Aux->pProx;
             }
         }
@@ -120,10 +120,10 @@ void Imprimir_Voos_Decolagem(tMatriz* pMatriz, char Hora_Decola,TVoo* Voo){//dec
     Aux = pMatriz->M[i][j]->pLista->pPrimeiro->pProx;
     printf("|Partida: %d\n Previsao: %d\n|",i,j );
     while (Aux != NULL) {
-      printf("|VID: %d\n",(Aux->Item->VID) );
-      printf("|Pista: %d\n",(Aux->Item->Pista));
-      printf("|Aeroporto Partida: %s\n",(Aux->Item->Aeroporto_Partida));
-      printf("|Aeroporto Chegada: %s/n",(Aux->Item->Aeroporto_Chegada));
+      printf("|VID: %d\n",(Aux->Item.VID) );
+      printf("|Pista: %d\n",(Aux->Item.Pista));
+      printf("|Aeroporto Partida: %s\n",(Aux->Item.Aeroporto_Partida));
+      printf("|Aeroporto Chegada: %s/n",(Aux->Item.Aeroporto_Chegada));
     }
   }
 }
@@ -140,10 +140,10 @@ void Imprimir_Voos_Pouso(tMatriz* pMatriz,char Hora_Previsto){
     Aux = pMatriz->M[i][j]->pLista->pPrimeiro->pProx;
     printf("|Partida: %d\n Previsao: %d\n|",i,j );
     while (Aux != NULL) {
-      printf("|VID: %d\n",(Aux->Item->VID) );
-      printf("|Pista: %d\n",(Aux->Item->Pista));
-      printf("|Aeroporto Partida: %s\n",(Aux->Item->Aeroporto_Partida));
-      printf("|Aeroporto Chegada: %s/n",(Aux->Item->Aeroporto_Chegada));
+      printf("|VID: %d\n",(Aux->Item.VID) );
+      printf("|Pista: %d\n",(Aux->Item.Pista));
+      printf("|Aeroporto Partida: %s\n",(Aux->Item.Aeroporto_Partida));
+      printf("|Aeroporto Chegada: %s/n",(Aux->Item.Aeroporto_Chegada));
     }
   }
 }
@@ -159,10 +159,10 @@ void Imprimir_Matriz(tMatriz* pMatriz){
             Aux= pMatriz->M[i][j]->pLista->pPrimeiro->pProx;
             printf("|Partida: %d\n Previsao: %d\n|",i,j );
             while(Aux != NULL){
-              printf("|VID: %d\n",(Aux->Item->VID) );
-              printf("|Pista: %d\n",(Aux->Item->Pista));
-              printf("|Aeroporto Partida: %s\n",(Aux->Item->Aeroporto_Partida));
-              printf("|Aeroporto Chegada: %s\n",(Aux->Item->Aeroporto_Chegada));
+              printf("|VID: %d\n",(Aux->Item.VID) );
+              printf("|Pista: %d\n",(Aux->Item.Pista));
+              printf("|Aeroporto Partida: %s\n",(Aux->Item.Aeroporto_Partida));
+              printf("|Aeroporto Chegada: %s\n",(Aux->Item.Aeroporto_Chegada));
             }
         }
     }
