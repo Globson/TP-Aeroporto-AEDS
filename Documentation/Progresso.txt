@@ -11,13 +11,13 @@ TAD DADOS_VOO{
 TAD LISTA_DE_VOOS{
 -> .h e .c        ->PRONTO -> Autor[SAMUEL]
 ->Funções{
-  A -----> PRONTA!
-  B -----> PRONTA!
-  C -----> PRONTA!
-  D -----> PRONTA!
+  A -----> PRONTA! ->>FUNCIONANDO!!
+  B -----> PRONTA! ->>FUNCIONANDO!!
+  C -----> PRONTA! ->>FUNCIONANDO!!
+  D -----> PRONTA! ->>FUNCIONANDO!!
 
 }
--> Testado?       -> NÃO!! Irei tentar testar hoje ainda..(15/09)
+-> Testado?       -> SIIM! PICA DAS GALAXIAS! TA FUNCIONANDO FILÉ! NÃO ENCOSTEM NESSAS FUNÇOES HEHE SE ALTERAREM ALGO EU COMO VCS!
 ->OBS:            -> O .h apresenta erros estranhos (que n existiam antes) e sem nexo no linter do ATOM, provavelmente apos a finalização do makefile isso suma.//--TAALVEZZ--//
 }
 
