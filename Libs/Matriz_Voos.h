@@ -3,7 +3,7 @@
 #include "Dados_Voo.h"
 
 typedef struct {
-  Item_Matriz M[24][24];
+  Item_Matriz* M[24][24];
   int Total_De_Voos;
   char Data[20];
   char Hora_Ultima_Atualizacao[20];
@@ -22,10 +22,10 @@ void SetHora_Ultima_Atualizacao(tMatriz* pMatriz);
 // GETS
 int
 void Inicia_Matriz(tMatriz* pMatriz);
-int Insere_Voo_Matriz(tMatriz* pMatriz);
-TVoo* Remove_Voo_Matriz(tMatriz* pMatriz);
-TVoo* Procurar_Voo_Matriz(tMatriz* pMatriz);
-void Imprimir_Voos_Decolagem_Pouso(tMatriz* pMatriz);
+int Insere_Voo_Matriz(tMatriz* pMatriz,TVoo* Voo);
+TVoo* Remove_Voo_Matriz(tMatriz* pMatriz,int VID);
+TVoo* Procurar_Voo_Matriz(tMatriz* pMatriz,int VID);
+void Imprimir_Voos_Decolagem_Pouso(tMatriz* pMatriz,char Hora_Decola,char Hora_Pouso);
 void Imprimir_Voos_Decolagem(tMatriz* pMatriz);
 void Imprimir_Voos_Pouso(tMatriz* pMatriz);
 void Imprimir_Matriz(tMatriz* pMatriz);
