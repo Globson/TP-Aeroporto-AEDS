@@ -3,9 +3,9 @@
                                 \\---------TADS---------//
 TAD DADOS_VOO{
   -> .h e .c        ->PRONTO -> Autores[SAMUEL E YURI]
-  -> Testado?       -> NÃO!!
+  -> Testado?       -> SIMM!Compilou e rodou de acordo com oq fiz no main individual de teste(Pra quem quiser tentar testar tem o EXEC_TESTE_DADOS_VOO ja compilado ent dê "./EXEC_TESTE_DADOS_VOO" ou se quiser compilar o seu dê "clang Teste_Dados_Voo.c -o EXEC ../Sources/Dados_Voo.c")!
   ->OBS:            -> O .h apresenta erros estranhos e sem nexo no linter do ATOM, provavelmente apos a finalização do makefile isso suma.//--TAALVEZZ--//
-}
+}   ->>>>>>ATENÇÃO! TAD FUNCIONAL! NÃO ALTERE SEM AVISAR OU TESTAR POSTERIORMENTE!!!<<<<<<<<<<<<<<<<<<<<----
 
 
 TAD LISTA_DE_VOOS{
@@ -17,7 +17,7 @@ TAD LISTA_DE_VOOS{
   D -----> PRONTA!
 
 }
--> Testado?       -> NÃO!!
+-> Testado?       -> NÃO!! Irei tentar testar hoje ainda..(15/09)
 ->OBS:            -> O .h apresenta erros estranhos (que n existiam antes) e sem nexo no linter do ATOM, provavelmente apos a finalização do makefile isso suma.//--TAALVEZZ--//
 }
 
