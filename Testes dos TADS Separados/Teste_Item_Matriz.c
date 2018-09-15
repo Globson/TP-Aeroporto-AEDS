@@ -5,8 +5,8 @@
 #include "../Libs/Item_Matriz.h"
 int main(int argc, char const *argv[]) {
   TLista Lista1,*pLista1;
-  Item_Matriz *pItem_Matriz;
-  TVoo Voo1,*pVoo1=NULL,Voo2,*pVoo2=NULL,Voo3,*pVoo3,*pVoo_REMOVIDO;
+  Item_Matriz *pItem_Matriz,Item_M;
+  TVoo Voo1,*pVoo1=NULL,Voo2,*pVoo2=NULL,Voo3,*pVoo3,pVoo_REMOVIDO,*pVooRemov,pVoo_PROCURADO,*pVooProc;
   char horad[10]="13:50",horap[10]="14:50",aeroc[10]="CPD",aerop[10]="ADC1";
   char horad2[10]="10:33",horap2[10]="16:55",aeroc2[10]="ASD",aerop2[10]="ASP2";
   char horad3[10]="09:20",horap3[10]="20:43",aeroc3[10]="ACE",aerop3[10]="AMG3";
@@ -15,7 +15,10 @@ int main(int argc, char const *argv[]) {
   pVoo2=&Voo2;
   pVoo3=&Voo3;
   pLista1=&Lista1;
-  int retorno_ListaVazia;
+  pVooRemov=&pVoo_REMOVIDO;
+  pVooProc=&pVoo_PROCURADO;
+  int retorno_ListaVazia,Removido,Procurado;
+  pItem_Matriz=&Item_M;
   int numero_voos=3;
   int ultima_atualizacao= 5;
 
@@ -61,12 +64,16 @@ int main(int argc, char const *argv[]) {
   retorno_ListaVazia= Lista_Vazia(pLista1);
   printf("Lista_Vazia: %d\n",retorno_ListaVazia);
   Imprime_Lista(pLista1);
-  pVoo_REMOVIDO = Remove_Voo(pLista1,GetVID(pVoo3));
-  if(pVoo_REMOVIDO != NULL){
-  printf("Hora do Voo removido: %s\n\n",pVoo_REMOVIDO->Hora_Decola );}
-  else{printf("Voo a ser removido não encontrado!\n\n" );}
+  Procurado= Procura_Voo(pLista1,pVooProc,GetVID(pVoo3));
+  if(Procurado != 0){
+    printf("-----------Horario do voo procurado: %s----------------\n\n",pVoo_PROCURADO.Hora_Decola );}
+  else{
+  printf("-----------Voo procurado nao encontrado!: ----------------\n\n");}
+  Removido = Remove_Voo(pLista1,pVooRemov,GetVID(pVoo3));
+  if(Removido != 0){
+  printf("-----------Hora do Voo removido: %s---------------------\n\n",pVoo_REMOVIDO.Hora_Decola );}
+  else{printf("--------------------Voo a ser removido não encontrado!-----------------\n\n" );}
   Imprime_Lista(pLista1);
-
 //Item_Matriz
 Inicializa_Matriz(pItem_Matriz);
 SetLista_de_Voos(pItem_Matriz,pLista1);
