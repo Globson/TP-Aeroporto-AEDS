@@ -2,20 +2,20 @@
 #define ITEM_MATRIZ_H
 #include "Lista_de_Voos.h"
 typedef struct ItemMatriz{
-    TLista* pLista;
+    TLista Lista;
     int Numero_de_Voos;
     int Ultima_Atualizacao;
-}Item_Matriz;
+}TItem_Matriz;
 //Inicializacao
-void Inicializa_Matriz(Item_Matriz* pI_Matriz);          //pI_Matriz é um ponteiro para o item matriz
-//------------------------------------------------------------------------------------------------------
-//GETS
-TLista* GetLista_de_Voos(Item_Matriz* pI_Matriz);
-int GetNumero_de_Voos(Item_Matriz* pI_Matriz);
-int GetUltima_Atualizacao(Item_Matriz* pI_Matriz);
+void Inicializa_Item_Matriz(TItem_Matriz* pI_Matriz);          //pI_Matriz é um ponteiro para o item matriz
 //------------------------------------------------------------------------------------------------------
 //SETS
-void SetLista_de_Voos(Item_Matriz* pI_Matriz, TLista* pLista);
-void SetNumero_de_Voos(Item_Matriz* pI_Matriz,int numero_voos);
-void SetUltima_AtualizacaoO(Item_Matriz* pI_Matriz, int ultima_atualizacao);
+void SetLista_de_Voos(TItem_Matriz* pI_Matriz, TLista* pLista);
+void SetNumero_de_Voos(TItem_Matriz* pI_Matriz,int numero_voos);
+void SetUltima_AtualizacaoO(TItem_Matriz* pI_Matriz, int ultima_atualizacao);
+//------------------------------------------------------------------------------------------------------
+//GETS
+TLista* GetLista_de_Voos(TItem_Matriz* pI_Matriz);
+int GetNumero_de_Voos(TItem_Matriz* pI_Matriz);
+int GetUltima_Atualizacao(TItem_Matriz* pI_Matriz);
 #endif

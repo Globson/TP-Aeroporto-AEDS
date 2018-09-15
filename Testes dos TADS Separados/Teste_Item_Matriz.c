@@ -4,8 +4,8 @@
 #include "../Libs/Lista_de_Voos.h"
 #include "../Libs/Item_Matriz.h"
 int main(int argc, char const *argv[]) {
-  TLista Lista1,*pLista1;
-  Item_Matriz *pItem_Matriz,Item_M;
+  TLista Lista1,*pLista1,*pLista2=NULL;
+  TItem_Matriz *pItem_Matriz,Item_M;
   TVoo Voo1,*pVoo1=NULL,Voo2,*pVoo2=NULL,Voo3,*pVoo3,pVoo_REMOVIDO,*pVooRemov,pVoo_PROCURADO,*pVooProc;
   char horad[10]="13:50",horap[10]="14:50",aeroc[10]="CPD",aerop[10]="ADC1";
   char horad2[10]="10:33",horap2[10]="16:55",aeroc2[10]="ASD",aerop2[10]="ASP2";
@@ -19,9 +19,8 @@ int main(int argc, char const *argv[]) {
   pVooProc=&pVoo_PROCURADO;
   int retorno_ListaVazia,Removido,Procurado;
   pItem_Matriz=&Item_M;
-  int numero_voos=3;
-  int ultima_atualizacao= 5;
-
+  int numero_voos=3,N_Voos;
+  int ultima_atualizacao=5,U_ATT;
 //Parte dos itens Voo
 
 
@@ -74,14 +73,22 @@ int main(int argc, char const *argv[]) {
   printf("-----------Hora do Voo removido: %s---------------------\n\n",pVoo_REMOVIDO.Hora_Decola );}
   else{printf("--------------------Voo a ser removido não encontrado!-----------------\n\n" );}
   Imprime_Lista(pLista1);
-//Item_Matriz
-Inicializa_Matriz(pItem_Matriz);
+
+
+//Teste do Item_Matriz
+Inicializa_Item_Matriz(pItem_Matriz);
 SetLista_de_Voos(pItem_Matriz,pLista1);
 SetNumero_de_Voos(pItem_Matriz, numero_voos);
 SetUltima_AtualizacaoO(pItem_Matriz,ultima_atualizacao);
-printf("%d\n",pItem_Matriz->Numero_de_Voos );
-printf("%d\n",pItem_Matriz->Ultima_Atualizacao );
-//printf("%s\n", );
+pLista2=GetLista_de_Voos(pItem_Matriz);
+if(pLista2 != NULL){
+  printf("A lista dentro do item matriz existe!\n\n");
+  Imprime_Lista(pLista2);}
+else{printf("A lista dentro do item matriz não existe!\n\n");}
+U_ATT = GetUltima_Atualizacao(pItem_Matriz);
+N_Voos = GetNumero_de_Voos(pItem_Matriz);
+printf("Numero de Voos:%d\n\n",N_Voos);
+printf("Ultima Atualização: %d\n\n",U_ATT);
 
   return 0;
 }
