@@ -1,3 +1,5 @@
+#ifndef VOO_H
+#define VOO_H
 typedef struct DadoVoo{
   int VID;
   char Hora_Decola[10];    //Variaveis para numero do Voo,Horario de decolagem,Horario de pouso,Horario previsto e numero da pista.
@@ -32,3 +34,4 @@ char* GetAeroporto_Chegada(TVoo* pVoo);
 //char* GetStatus(TVoo pVoo);
 
 //------------------------------------------------------------------------------------------------------
+#endif
