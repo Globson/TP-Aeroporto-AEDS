@@ -8,8 +8,7 @@
 void Inicia_Lista(TLista* pLista){
   pLista->pPrimeiro = (struct Celula*) malloc(sizeof(TCelula));
   pLista->pUltimo = pLista->pPrimeiro;
-  pLista->pPrimeiro->pProx= NULL;
-  InicializaVoo(pLista->pPrimeiro->Item);}
+  pLista->pPrimeiro->pProx= NULL;}
 
 
 int Lista_Vazia(TLista* pLista){
@@ -80,7 +79,7 @@ void Imprime_Lista(TLista* pLista){ //--------------->> Função Apenas para tes
       printf("Numero da Pista: %d\n",pAux->Item->Pista);
       printf("Aeroporto de Chegada: %s\n",pAux->Item->Aeroporto_Chegada);
       printf("Aeroporto de Partida: %s\n",pAux->Item->Aeroporto_Partida);
-      printf("---------Fim da Celula--------");
+      printf("---------Fim da Celula--------\n\n");
       pAux=pAux->pProx;
     }
 }

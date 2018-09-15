@@ -21,7 +21,7 @@ void InicializaVoo(TVoo* pVoo){
 //printf("Entre com a hora e os minutos da partida separados por dois pontos:");
 //scanf("%d%c%d",&Modelo->Hora_Decola,p1,&Modelo->Minuto_Decola);}
 void SetVID(TVoo* pVoo){
-  srand(time(NULL));
+  srand((unsigned)time(NULL));
   pVoo->VID=(rand()%1000);}
 
 
