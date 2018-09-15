@@ -8,7 +8,7 @@ typedef struct Celula{
 typedef struct Lista{
   struct Celula* pPrimeiro;
   struct Celula* pUltimo;
-}TLista; //Nome TipoLista para substituir a struct//
+}TLista; //Nome TipoLista para substituir a struct//     //pLista é um ponteiro para o tipo TLista.//
 void Inicia_Lista(TLista* pLista); //Passando por parametro ponteiro do tipo da struct TipoLista para acessar structs//
 int Lista_Vazia(TLista* pLista); //Função para verificar se lista encontra-se vazia.//
 int Insere_Voo(TLista* pLista,TVoo* pVoo);

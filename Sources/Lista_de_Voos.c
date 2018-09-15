@@ -35,8 +35,8 @@ int Insere_Voo(TLista* pLista,TVoo* pVoo){             //Se inserido com sucesso
 
 
 
-int Remove_Voo(TLista* pLista,TVoo* pVoo_Aux,int VID_R){    //Essa função retorna 1 se o voo foi removido com sucesso e 0 caso nao. Alem de passar por parametro o Tipo Voo removido.//
-  TCelula *pAux_Atual,*pAux_Prox;
+int Remove_Voo(TLista* pLista,TVoo* pVoo_Aux,int VID_R){    //Essa função retorna 1 se o voo foi removido com sucesso e 0 caso nao. Alem de passar por parametro o Tipo Voo (para fora da função) removido.//
+  TCelula *pAux_Atual,*pAux_Prox;                           //ATENÇÃO! CRIE UM PONTEIRO DO TIPO TVoo E UMA VARIAVEL (FAÇA O PONTEIRO APONTAR PARA A VARIAVEL E ENT O PASSE POR PARAMETRO) PARA SALVAR O VOO FORA DA MEMORIA Q SERA DADO FREE().//
   if(pLista->pPrimeiro->pProx == NULL){return 0;}
   pAux_Atual = pLista->pPrimeiro;
   pAux_Prox = pLista->pPrimeiro->pProx;
@@ -56,7 +56,7 @@ int Remove_Voo(TLista* pLista,TVoo* pVoo_Aux,int VID_R){    //Essa função reto
 
 
 int Procura_Voo(TLista* pLista,TVoo* pVoo_Aux,int VID_P){ // A função devolve o endereço do TipoVoo que contem o VID pelo ponteiro TVoo passado por parametro e retorna 1 se isso ocorre corretamente e 0 se nao é encontrado.//
-  TCelula* Aux;
+  TCelula* Aux;                                           //ATENÇÃO! CRIE UM PONTEIRO DO TIPO TVoo E PASSE POR PARAMETRO PARA ARMAZENAR O ENDEREÇO DO TVOO.//
   Aux= pLista->pPrimeiro->pProx;
   while(Aux != NULL && Aux->Item.VID != VID_P){
     Aux=Aux->pProx;}

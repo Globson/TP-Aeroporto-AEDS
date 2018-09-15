@@ -5,7 +5,7 @@
 #include <time.h>
 
 
-//Inicializacao
+//Inicializacao 
 void InicializaVoo(TVoo* pVoo){
   pVoo->VID = 0;
   strcpy(pVoo->Hora_Decola,"");
@@ -16,14 +16,14 @@ void InicializaVoo(TVoo* pVoo){
 //------------------------------------------------------------------------------------------------------
 
 // SETS
-//TODO:Colocar esse trecho no main para a leitura dos : no horario
 //char p1[1];
 //printf("Entre com a hora e os minutos da partida separados por dois pontos:");
 //scanf("%d%c%d",&Modelo->Hora_Decola,p1,&Modelo->Minuto_Decola);}
 
 //AS FUNÇÕES SAO DO TIPO VOID E APENAS AJUSTAM OQ FOI PEDIDO NA STRUCT REFERENCIADA PELO PONTEIRO PASSADO POR PARAMETRO.//
-void SetVID(TVoo* pVoo){
-  srand((unsigned)time(NULL));
+
+void SetVID(TVoo* pVoo){     //Função gera Valor de VID Aleatorio e unico no segundo em q ela roda.//
+  srand((unsigned)time(NULL));   //ATENÇÃO!!!----SE FUNÇÃO RODAR MAIS DE UMA VEZ NO MESMO SEGUNDO PARA DOS VOOS DIFERENTES, OS 2 TERÃO O MESMO NUMERO DE VID!!!------///
   pVoo->VID=(rand()%1000);}
 
 
@@ -53,7 +53,7 @@ void SetAeroporto_Chegada(TVoo* pVoo,char aeroporto[]){
 int GetVID(TVoo* pVoo){return pVoo->VID;}
 
 
-char* GetHora_Decola(TVoo* pVoo){return pVoo->Hora_Decola;}
+char* GetHora_Decola(TVoo* pVoo){return pVoo->Hora_Decola;} //Função retorna endereço para o tipo char*//
 
 
 char* GetHora_Previsto(TVoo* pVoo){return pVoo->Hora_Previsto;}
@@ -63,10 +63,10 @@ int GetPista(TVoo* pVoo){return pVoo->Pista;}
 
 
 
-char* GetAeroporto_Partida(TVoo* pVoo){return pVoo->Aeroporto_Partida;}
+char* GetAeroporto_Partida(TVoo* pVoo){return pVoo->Aeroporto_Partida;} //Função retorna endereço para o tipo char*//
 
 
 
-char* GetAeroporto_Chegada(TVoo* pVoo){return pVoo->Aeroporto_Chegada;}
+char* GetAeroporto_Chegada(TVoo* pVoo){return pVoo->Aeroporto_Chegada;} //Função retorna endereço para o tipo char*//
 
 //------------------------------------------------------------------------------------------------------
