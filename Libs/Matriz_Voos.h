@@ -20,7 +20,7 @@ void SetHora_Ultima_Atualizacao(tMatriz* pMatriz);
 
 
 // GETS
-int
+
 void Inicia_Matriz(tMatriz* pMatriz);
 int Insere_Voo_Matriz(tMatriz* pMatriz,TVoo* Voo);
 TVoo* Remove_Voo_Matriz(tMatriz* pMatriz,int VID);
