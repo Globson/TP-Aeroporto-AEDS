@@ -47,38 +47,26 @@ void SetAeroporto_Chegada(TVoo* pVoo,char aeroporto[]){
 
 // GETS
 //TODO:Retornar ao invez de printar os valores repassados
-int GetVID(TVoo pVoo){return pVoo.VID;}
+int GetVID(TVoo* pVoo){return pVoo->VID;}
  //TODO:Verificar como retornar de forma apropriada as horas e minutos juntos
 
 
-char* GetHora_Decola(TVoo pVoo){
-  char* Aux;
-  Aux = pVoo.Hora_Decola;
-  return Aux;}
+char* GetHora_Decola(TVoo* pVoo){return pVoo->Hora_Decola;}
 
 
-char* GetHora_Previsto(TVoo pVoo){
-  char* Aux;
-  Aux = pVoo.Hora_Previsto;
-  return Aux;}
+char* GetHora_Previsto(TVoo* pVoo){return pVoo->Hora_Previsto;}
 
 
-int GetPista(TVoo pVoo){return pVoo.Pista;}
+int GetPista(TVoo* pVoo){return pVoo->Pista;}
 
 
 //TODO: Verificar possivel  quebra de seguranca com o retorno do endereco do Modelo
 
 
-char* GetAeroporto_Partida(TVoo pVoo){
-  char* Aux;
-  Aux = pVoo.Aeroporto_Partida;
-  return Aux;}
+char* GetAeroporto_Partida(TVoo* pVoo){return pVoo->Aeroporto_Partida;}
 
 
 
-char* GetAeroporto_Chegada(TVoo pVoo){
-  char* Aux;
-  Aux = pVoo.Aeroporto_Chegada;
-  return Aux;}
+char* GetAeroporto_Chegada(TVoo* pVoo){return pVoo->Aeroporto_Chegada;}
 
 //------------------------------------------------------------------------------------------------------

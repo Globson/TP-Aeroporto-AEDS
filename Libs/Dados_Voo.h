@@ -22,12 +22,12 @@ void SetAeroporto_Chegada(TVoo* pVoo,char aeroporto[]);
 //void SetStatus(TVoo* pVoo,char status[]);
 //------------------------------------------------------------------------------------------------------
 //GETS
-int GetVID(TVoo pVoo);
-char* GetHora_Decola(TVoo pVoo);
-char* GetHora_Previsto(TVoo pVoo);
-int GetPista(TVoo pVoo);
-char* GetAeroporto_Partida(TVoo pVoo);
-char* GetAeroporto_Chegada(TVoo pVoo);
+int GetVID(TVoo* pVoo);
+char* GetHora_Decola(TVoo* pVoo);
+char* GetHora_Previsto(TVoo* pVoo);
+int GetPista(TVoo* pVoo);
+char* GetAeroporto_Partida(TVoo* pVoo);
+char* GetAeroporto_Chegada(TVoo* pVoo);
 //char* GetCiaAerea(TVoo pVoo);
 //char* GetStatus(TVoo pVoo);
 
