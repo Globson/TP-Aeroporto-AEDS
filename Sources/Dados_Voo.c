@@ -20,6 +20,8 @@ void InicializaVoo(TVoo* pVoo){
 //char p1[1];
 //printf("Entre com a hora e os minutos da partida separados por dois pontos:");
 //scanf("%d%c%d",&Modelo->Hora_Decola,p1,&Modelo->Minuto_Decola);}
+
+//AS FUNÇÕES SAO DO TIPO VOID E APENAS AJUSTAM OQ FOI PEDIDO NA STRUCT REFERENCIADA PELO PONTEIRO PASSADO POR PARAMETRO.//
 void SetVID(TVoo* pVoo){
   srand((unsigned)time(NULL));
   pVoo->VID=(rand()%1000);}
@@ -46,9 +48,9 @@ void SetAeroporto_Chegada(TVoo* pVoo,char aeroporto[]){
 //------------------------------------------------------------------------------------------------------
 
 // GETS
-//TODO:Retornar ao invez de printar os valores repassados
+
+//FUNÇÕES RETORNAM O QUE ELAS REPRESENTAM, ALGUMAS RETORNAM ENDEREÇOS PARA PONTEIROS DO TIPO DE ARQUIVO REQUISITADO NO GET;//
 int GetVID(TVoo* pVoo){return pVoo->VID;}
- //TODO:Verificar como retornar de forma apropriada as horas e minutos juntos
 
 
 char* GetHora_Decola(TVoo* pVoo){return pVoo->Hora_Decola;}
@@ -59,8 +61,6 @@ char* GetHora_Previsto(TVoo* pVoo){return pVoo->Hora_Previsto;}
 
 int GetPista(TVoo* pVoo){return pVoo->Pista;}
 
-
-//TODO: Verificar possivel  quebra de seguranca com o retorno do endereco do Modelo
 
 
 char* GetAeroporto_Partida(TVoo* pVoo){return pVoo->Aeroporto_Partida;}
