@@ -12,11 +12,29 @@ O sistema usa conteudo visto em sala de aula,como alocação dinamica de memoria
 
 OS X & Linux:
 
-Aconselho o compilador LLVM para a compilação do codigo
+Voce ira precisar do LLVM para compilar o codigo
+
+* Ubuntu
+```
+sudo apt-get install clang
+```
+* Arch
+```
+su
+pacman -Sy clang
+```
+Para mais informações consulte o [site](https://clang.llvm.org/get_started.html)
+
+De um clone no repositorio
+```
+git clone https://github.com/Globson/TP-Aeroporto-AEDS
 
 ```
-Clang Main.c ....
-
+Compile ele
+```
+cd TP-Aeroporto-AEDS
+make
+make clean
 ```
 
 Windows:
@@ -26,9 +44,9 @@ Abra o projeto em alguma IDE de sua preferencia,como o CodeBlocks ou Clion
 ## Licença
 
 O Projeto é distribuido sobre a GPL-3.0.
-Veja `LICENSE` para mais informações.
+Veja [LICENSE](https://github.com/Globson/TP-Aeroporto-AEDS/blob/master/LICENSE) para mais informações.
 
-[LICENSE](https://github.com/Globson/TP-Aeroporto-AEDS/blob/master/LICENSE)
+
 
 ## Autores
 
