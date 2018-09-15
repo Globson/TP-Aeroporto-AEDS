@@ -36,19 +36,19 @@ TAD ITEM_MATRIZ{
 TAD MATRIZ_VOOS{
 -> .h e .c        ->EM DESENVOLVIMENTO -> AUTORES[ARYELS E YURI]
 ->Funções{
-  A ----->
-  B ----->
-  C ----->
-  D ----->
-  E ----->
-  F ----->
-  G ----->
-  H ----->
-  I ----->
-  J ----->
-  K ----->
-  L ----->
-  M ----->
+  A ----->FEITA
+  B ----->FEITA
+  C ----->FEITA
+  D ----->FEITA
+  E ----->FEITA
+  F ----->FEITA
+  G ----->FEITA
+  H ----->FEITA
+  I ----->FEITA
+  J ----->FEITA
+  K ----->FEITA(gostaria de fazer com o set pq provavelmente o atoi ta errado)
+L ----->FEITA(gostaria fazer com o set pq provavelmente o atoi ta errado)
+  M ----->FEITA
 }
 -> Testado?       -> NÃO!!
 ->OBS:            -> O .h apresenta erros estranhos e sem nexo no linter do ATOM, provavelmente apos a finalização do makefile isso suma.//--TAALVEZZ--//
