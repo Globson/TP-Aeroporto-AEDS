@@ -2,7 +2,7 @@ all: Main.o Sources/Dados_Voo.o Sources/Item_Matriz.o Sources/Lista_de_Voos.o So
 	clang -o Main Sources/Dados_Voo.o Sources/Item_Matriz.o Sources/Lista_de_Voos.o Sources/Matriz_Voos.o
 
 Sources/Dados_Voo.o: Libs/Dados_Voo.h Sources/Dados_Voo.c
-	clang -c Sources/Dados_voo.c
+	clang -c Sources/Dados_Voo.c
 
 Sources/Item_Matriz.o: Libs/Item_Matriz.h Sources/Item_Matriz.c
 	clang -c Sources/Item_Matriz.c
