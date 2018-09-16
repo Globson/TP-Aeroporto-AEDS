@@ -12,7 +12,7 @@ O sistema usa conteudo visto em sala de aula,como alocação dinamica de memoria
 
 **OS X & Linux**
 
-Voce ira precisar do CLang para compilar o codigo
+Voce ira precisar do CLang(LLVM) para compilar o codigo
 
 * Ubuntu
 ```
