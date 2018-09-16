@@ -3,8 +3,7 @@
 #include "../Libs/Item_Matriz.h"
 //Inicializacao//
 void Inicializa_Item_Matriz(TItem_Matriz* pI_Matriz){
-  pI_Matriz->Lista.pPrimeiro= NULL;
-  pI_Matriz->Lista.pUltimo= NULL;
+  Inicia_Lista(&pI_Matriz->Lista);
   pI_Matriz->Numero_de_Voos = 0;
   pI_Matriz->Ultima_Atualizacao = 0;}
 //------------------------------------------------------------------------------------------------------
