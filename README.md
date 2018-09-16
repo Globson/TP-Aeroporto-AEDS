@@ -10,9 +10,9 @@ O sistema usa conteudo visto em sala de aula,como alocação dinamica de memoria
 
 ## Instalação
 
-OS X & Linux:
+**OS X & Linux**
 
-Voce ira precisar do LLVM para compilar o codigo
+Voce ira precisar do CLang para compilar o codigo
 
 * Ubuntu
 ```
@@ -37,13 +37,14 @@ make
 make clean
 ```
 
-Windows:
+**Windows**
 
 Abra o projeto em alguma IDE de sua preferencia,como o CodeBlocks ou Clion
 
+
 ## Licença
 
-O Projeto é distribuido sobre a GPL-3.0.
+O Projeto é distribuido sob a GPL-3.0.
 Veja [LICENSE](https://github.com/Globson/TP-Aeroporto-AEDS/blob/master/LICENSE) para mais informações.
 
 
