@@ -5,8 +5,8 @@
 typedef struct {
   TItem_Matriz* M[24][24];
   int Total_De_Voos;
-  char Data[20];
-  char Hora_Ultima_Atualizacao[20];
+  int Data;
+  int Hora_Ultima_Atualizacao_Matriz;
 }tMatriz;
 
 
@@ -16,12 +16,12 @@ typedef struct {
 // SETS
 void SetData(tMatriz* pMatriz);
 void SetTotal_De_Voos(tMatriz* pMatriz);
-void SetHora_Ultima_Atualizacao(tMatriz* pMatriz);
+void SetHora_Ultima_Atualizacao_Matriz(tMatriz* pMatriz);
 
 
 // GETS
-char* GetData(tMatriz* pMatriz);
-char* GetHora_Ultima_Atualizacao(tMatriz* pMatriz);
+int GetData(tMatriz* pMatriz);
+int GetHora_Ultima_Atualizacao_Matriz(tMatriz* pMatriz);
 
 //------------------------------------------------------------------------------------------------------
 //Funcoes
@@ -37,7 +37,7 @@ void Encontrar_Faixa_Voos_Maior(tMatriz* pMatriz);//Faixa que tem a maior quanti
 void Encontrar_Faixa_Voos_Menor(tMatriz* pMatriz);//Faixa que tem a menor quantidade de voos
 void Encontrar_Lista_Voos_Mais_Recente(tMatriz* pMatriz);
 void Encontrar_Lista_Voos_Menos_Recente(tMatriz* pMatriz);
-int Matriz_Esparca(tMatriz* pMatriz);
+void Matriz_Esparca(tMatriz* pMatriz);
 /*Verificar se o numero de posicoes da matriz sem voos
 cadastrados e,no minimo,o dobro daquelas com 1 voo
 cadastrado*/
