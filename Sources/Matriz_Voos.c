@@ -14,28 +14,37 @@
 
 // SETS
 void SetData(tMatriz* pMatriz){
-    strcpy(pMatriz->Data,__DATE__);
+    time_t tp;
+    struct tm lt;
+    time(&tp);
+    lt = *localtime(&tp);
+    int data=1000000*lt.tm_mday+10000*(lt.tm_mon+1)+1900+lt.tm_year;
+    pMatriz->Data = data;
 }
-void SetHora_Ultima_Atualizacao(tMatriz* pMatriz){
-    strcpy(pMatriz->Hora_Ultima_Atualizacao,__TIME__);//TODO:Consetar o __TIME__.Apenas pega o horario da compilacao
+void SetHora_Ultima_Atualizacao_Matriz(tMatriz* pMatriz){
+    time_t tp;
+    struct tm lt;
+    time(&tp);
+    lt = *localtime(&tp);
+	int hora=100*lt.tm_hour+lt.tm_min;
+    pMatriz->Hora_Ultima_Atualizacao_Matriz = hora;
 }
 //------------------------------------------------------------------------------------------------------
 
 // GETS
-char* GetData(tMatriz* pMatriz){
+int GetData(tMatriz* pMatriz){
     return pMatriz->Data;
 }
-char* GetHora_Ultima_Atualizacao(tMatriz* pMatriz){
-    return pMatriz->Hora_Ultima_Atualizacao;
+int GetHora_Ultima_Atualizacao_Matriz(tMatriz* pMatriz){
+    return pMatriz->Hora_Ultima_Atualizacao_Matriz;
 }
 //------------------------------------------------------------------------------------------------------
 
 void Inicia_Matriz(tMatriz* pMatriz){
     SetData(pMatriz);
     pMatriz->Total_De_Voos = 0;
-    strcpy(pMatriz->Hora_Ultima_Atualizacao,"");
+    SetHora_Ultima_Atualizacao_Matriz(pMatriz);
     int i = 0,j = 0;
-
     for ( i = 0; i < count; i++) {
         for (j = 0; j < count; j++) {
             Inicializa_Item_Matriz(pMatriz->M[i][j]);
@@ -45,7 +54,7 @@ void Inicia_Matriz(tMatriz* pMatriz){
 int Insere_Voo_Matriz(tMatriz* pMatriz,TVoo* Voo){
     //Vai ser pego a hora para achar a posicao na matriz e
     // dps chamar a funcao da lista daquela posicao da matriz
-    SetHora_Ultima_Atualizacao(pMatriz);
+    //SetHora_Ultima_Atualizacao_Matriz(pMatriz);
     char Decolagem[3];
     char Previsto[3];
     memcpy( Decolagem, &Voo->Hora_Decola[0], 2);
@@ -58,7 +67,8 @@ int Insere_Voo_Matriz(tMatriz* pMatriz,TVoo* Voo){
     aux = Insere_Voo(&pMatriz->M[Hora_Decola][Hora_Previsto]->Lista,Voo);
     if (aux == 1) {
         SetNumero_de_Voos(pMatriz->M[Hora_Decola][Hora_Previsto],pMatriz->M[Hora_Decola][Hora_Previsto]->Numero_de_Voos+1);
-        SetHora_Ultima_Atualizacao(pMatriz);
+        SetHora_Ultima_Atualizacao_Matriz(pMatriz);
+        SetUltima_Atualizacao(pMatriz->M[Hora_Decola][Hora_Previsto]);
         return 1;
     }else{
         return 0;
@@ -75,7 +85,7 @@ TVoo* Remove_Voo_Matriz(tMatriz* pMatriz,int VID){
             aux = Remove_Voo(&pMatriz->M[i][j]->Lista,Voo,VID);
             if(aux == 1){
                 SetNumero_de_Voos(pMatriz->M[i][j],pMatriz->M[i][j]->Numero_de_Voos-1);
-                SetHora_Ultima_Atualizacao(pMatriz);
+                SetHora_Ultima_Atualizacao_Matriz(pMatriz);
             }
         }
     }
@@ -227,73 +237,68 @@ void Encontrar_Faixa_Voos_Menor(tMatriz* pMatriz){
 //TODO:Arrumar daqui pra baixo
 
 void Encontrar_Lista_Voos_Mais_Recente(tMatriz* pMatriz){
-
-  int Aux,i,j,fi,fc,ultm;
-  ultm=pMatriz->M[0][0]->Ultima_Atualizacao;
-  for(i = 0; i < count; i++){
-    for(j = 0; j < count; j++){
-      Aux=pMatriz->M[i][j]->Ultima_Atualizacao;
-      if(ultm<Aux){
-        ultm=Aux;
-        fi=i;
-        fc=j;
+/*Encontrar lista de voos mais recentemente alterada. Mostra indices i e j
+da posição encontrada e horário da última alteração*/
+  int aux = 0,i,j,auxJ,auxI;
+  for ( i = 0; i < count; i++) {
+    for ( j = 0; j < count; j++) {
+      if(pMatriz->M[i][j]->Hora_Ultima_Atualizacao > aux){
+        aux = pMatriz->M[i][j]->Hora_Ultima_Atualizacao;
+        auxI = i;
+        auxJ = j;
       }
     }
   }
+  if(aux != 0){
+    int converthora = aux/100;
+    int convertmin = aux - converthora*100;
+    printf("Hora: %d:%d\nNa posicao: Linha = %d \\ Coluna = %d\n",converthora,convertmin,auxI,auxJ);
 
-  //printf("Hora da ultima atualização\n",SetHora_Ultima_Atualizacao(pMatriz->M[fi][fc]) );//Queria fazer assim;
-  char Hora[3];
-  char Minuto[3];
-  memcpy( Hora, &pMatriz->Hora_Ultima_Atualizacao[0], 2);//YURI não sei se é assim que usa essa função, tentei me espelhar na sua utilização;
-  memcpy( Minuto, &pMatriz->Hora_Ultima_Atualizacao[0], 2);//Não entendi o formato do Hora_Ultima_Atualizacao
-  Hora[2] = '\0'; // adiciona o terminador de linha
-  Minuto[2] = '\0'; // adiciona o terminador de linha
-  int Hora_Ultima_Atualizacao = atoi(Hora);
-  int Minuto_Ultima_Atualizacao = atoi(Minuto);
-  printf("Ultima Atualização esta na faixa: Linha:%d Coluna: %d\n", fi,fc );
-  printf("Hora da ultima atualização: %d:%d\n",Hora_Ultima_Atualizacao, Minuto_Ultima_Atualizacao);
+  }else{
+    printf("Nenhum voo cadastrado ate o momento\n");
+  }
 }
 
 
 
 
 void Encontrar_Lista_Voos_Menos_Recente(tMatriz* pMatriz){
-  int Aux,i,j,fi,fc,ultm;
-  ultm=pMatriz->M[0][0]->Ultima_Atualizacao;
-  for(i = 0; i < count; i++){
-    for(j = 0; j < count; j++){
-      Aux=pMatriz->M[i][j]->Ultima_Atualizacao;
-      if(ultm>Aux){
-        ultm=Aux;
-        fi=i;
-        fc=j;
+  int aux = 9999,i,j,auxJ,auxI;
+  for ( i = 0; i < count; i++) {
+    for ( j = 0; j < count; j++) {
+      if(pMatriz->M[i][j]->Hora_Ultima_Atualizacao < aux){
+        aux = pMatriz->M[i][j]->Hora_Ultima_Atualizacao;
+        auxI = i;
+        auxJ = j;
       }
     }
   }
-  char Hora[3];
-  char Minuto[3];
-  memcpy( Hora, &pMatriz->Hora_Ultima_Atualizacao[0], 2);//YURI não sei se é assim que usa essa função, tentei me espelhar na sua utilização;
-  memcpy( Minuto, &pMatriz->Hora_Ultima_Atualizacao[0], 2);//Não entendi o formato do Hora_Ultima_Atualizacao
-  Hora[2] = '\0'; // adiciona o terminador de linha
-  Minuto[2] = '\0'; // adiciona o terminador de linha
-  int Hora_Ultima_Atualizacao = atoi(Hora);
-  int Minuto_Ultima_Atualizacao = atoi(Minuto);
-  printf("Atualização mais antiga esta na faixa: Linha:%d Coluna: %d\n", fi,fc );
-  printf("Hora da atualização mais aintga: %d:%d\n",Hora_Ultima_Atualizacao, Minuto_Ultima_Atualizacao);
+  if(aux != 9999){
+    int converthora = aux/100;
+    int convertmin = aux - converthora*100;
+    printf("Hora: %d:%d\nNa posicao: Linha = %d \\ Coluna = %d\n",converthora,convertmin,auxI,auxJ);
+
+  }else{
+    printf("Nenhum voo cadastrado ate o momento\n");
+  }
 }
 
 
 
-int Matriz_Esparca(tMatriz* pMatriz){
-  int x,i,j,contador=0;
-  for(i = 0; i < count;i++){
-    for(j = 0; i < count; j++){
-      if(pMatriz->M[i][j]==0){
-        contador++;
+void Matriz_Esparca(tMatriz* pMatriz){
+  int i = 0 ,j = 0 ,semcadastro = 0,comcadastro = 0;
+  for ( i = 0; i < count; i++) {
+    for ( j = 0; j < count; j++) {
+      if (pMatriz->M[i][j]->Numero_de_Voos >0) {
+        comcadastro+=1;
+      }else{
+        semcadastro+=1;
       }
     }
+    if (semcadastro*2>comcadastro) {
+      printf("A matriz e esparca\n");
+    }else{
+      printf("A matriz nao e esparca\n");
+    }
   }
-  x=count-contador;
-  if(contador>(2*x)){ // se o contador for maior que o dobro de posições com voos;
-  printf("Matriz é esparça\n");}
-  return 0;}
+}
