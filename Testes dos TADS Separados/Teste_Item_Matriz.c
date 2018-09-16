@@ -5,7 +5,7 @@
 #include "../Libs/Item_Matriz.h"
 int main(int argc, char const *argv[]) {
   TLista Lista1,*pLista1,*pLista2=NULL;
-  TItem_Matriz *pItem_Matriz,Item_M;
+  TItem_Matriz Item_M;
   TVoo Voo1,*pVoo1=NULL,Voo2,*pVoo2=NULL,Voo3,*pVoo3,pVoo_REMOVIDO,*pVooRemov,pVoo_PROCURADO,*pVooProc;
   char horad[10]="13:50",horap[10]="14:50",aeroc[10]="CPD",aerop[10]="ADC1";
   char horad2[10]="10:33",horap2[10]="16:55",aeroc2[10]="ASD",aerop2[10]="ASP2";
@@ -18,9 +18,8 @@ int main(int argc, char const *argv[]) {
   pVooRemov=&pVoo_REMOVIDO;
   pVooProc=&pVoo_PROCURADO;
   int retorno_ListaVazia,Removido,Procurado;
-  pItem_Matriz=&Item_M;
   int numero_voos=3,N_Voos;
-  int ultima_atualizacao=5,U_ATT;
+  char *U_ATT;
 //Parte dos itens Voo
 
 
@@ -76,19 +75,19 @@ int main(int argc, char const *argv[]) {
 
 
 //Teste do Item_Matriz
-Inicializa_Item_Matriz(pItem_Matriz);
-SetLista_de_Voos(pItem_Matriz,pLista1);
-SetNumero_de_Voos(pItem_Matriz, numero_voos);
-SetUltima_AtualizacaoO(pItem_Matriz,ultima_atualizacao);
-pLista2=GetLista_de_Voos(pItem_Matriz);
+Inicializa_Item_Matriz(&Item_M);
+SetLista_de_Voos(&Item_M,pLista1);
+SetNumero_de_Voos(&Item_M, numero_voos);
+SetUltima_Atualizacao(&Item_M);
+pLista2=GetLista_de_Voos(&Item_M);
 if(pLista2 != NULL){
   printf("A lista dentro do item matriz existe!\n\n");
   Imprime_Lista(pLista2);}
 else{printf("A lista dentro do item matriz não existe!\n\n");}
-U_ATT = GetUltima_Atualizacao(pItem_Matriz);
-N_Voos = GetNumero_de_Voos(pItem_Matriz);
+U_ATT = GetUltima_Atualizacao(&Item_M);
+N_Voos = GetNumero_de_Voos(&Item_M);
 printf("Numero de Voos:%d\n\n",N_Voos);
-printf("Ultima Atualização: %d\n\n",U_ATT);
+printf("Ultima Atualização: %s\n\n",U_ATT);
 
   return 0;
 }
