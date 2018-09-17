@@ -1,8 +1,8 @@
+#ifndef MATRIZ_VOO_H
+#define MATRIZ_VOO_H
 #include "Item_Matriz.h"
 #include "Lista_de_Voos.h"
 #include "Dados_Voo.h"
-#ifndef MATRIZ_VOO_H
-#define MATRIZ_VOO_H
 typedef struct {
   TItem_Matriz* M[24][24];
   int Total_De_Voos;
