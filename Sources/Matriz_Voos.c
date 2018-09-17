@@ -77,12 +77,13 @@ int Insere_Voo_Matriz(tMatriz* pMatriz,TVoo* Voo){
 
 
 
-TVoo* Remove_Voo_Matriz(tMatriz* pMatriz,int VID){
-    TVoo* Voo;
+TVoo Remove_Voo_Matriz(tMatriz* pMatriz,int VID){ //Função retorna uma variavel do tipo TVoo, por isso então, Criei uma variavel do mesmo tipo para receber o retorno dessa função.//YURICABAÇO//
+    TVoo Voo;
+    InicializaVoo(&Voo);
     int aux = 0 ;
     for ( size_t i = 0; i < count; i++) {
         for ( size_t j = 0; j < count; j++) {
-            aux = Remove_Voo(&pMatriz->M[i][j]->Lista,Voo,VID);
+            aux = Remove_Voo(&pMatriz->M[i][j]->Lista,&Voo,VID);
             if(aux == 1){
                 SetNumero_de_Voos(pMatriz->M[i][j],pMatriz->M[i][j]->Numero_de_Voos-1);
                 SetHora_Ultima_Atualizacao_Matriz(pMatriz);
@@ -95,8 +96,8 @@ TVoo* Remove_Voo_Matriz(tMatriz* pMatriz,int VID){
 
 
 
-TVoo* Procurar_Voo_Matriz(tMatriz* pMatriz,int VID){
-    TVoo* Voo;
+TVoo* Procurar_Voo_Matriz(tMatriz* pMatriz,int VID){ //Função retorna endereço para ponteiro do Tipo TVoo (Endereço de um Voo dentro de uma celula da lista encadeada.)//
+    TVoo* Voo=NULL;
     for (size_t i = 0; i < count; i++) {
         for (size_t j = 0; j < count; j++) {
             Procura_Voo(&pMatriz->M[i][j]->Lista,Voo,VID);

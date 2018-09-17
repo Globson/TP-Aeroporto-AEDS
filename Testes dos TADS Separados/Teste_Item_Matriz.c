@@ -19,7 +19,7 @@ int main(int argc, char const *argv[]) {
   pVooProc=&pVoo_PROCURADO;
   int retorno_ListaVazia,Removido,Procurado;
   int numero_voos=3,N_Voos;
-  char *U_ATT;
+  int U_ATT;
 //Parte dos itens Voo
 
 
@@ -87,7 +87,7 @@ else{printf("A lista dentro do item matriz não existe!\n\n");}
 U_ATT = GetUltima_Atualizacao(&Item_M);
 N_Voos = GetNumero_de_Voos(&Item_M);
 printf("Numero de Voos:%d\n\n",N_Voos);
-printf("Ultima Atualização: %s\n\n",U_ATT);
+printf("Ultima Atualização: %d\n\n",U_ATT);
 
   return 0;
 }

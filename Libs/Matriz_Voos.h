@@ -27,7 +27,7 @@ int GetHora_Ultima_Atualizacao_Matriz(tMatriz* pMatriz);
 //Funcoes
 void Inicia_Matriz(tMatriz* pMatriz);
 int Insere_Voo_Matriz(tMatriz* pMatriz,TVoo* Voo);
-TVoo* Remove_Voo_Matriz(tMatriz* pMatriz,int VID);
+TVoo Remove_Voo_Matriz(tMatriz* pMatriz,int VID);
 TVoo* Procurar_Voo_Matriz(tMatriz* pMatriz,int VID);
 void Imprimir_Voos_Decolagem_Pouso(tMatriz* pMatriz,char* Hora_Decola,char* Hora_Pouso);
 void Imprimir_Voos_Decolagem(tMatriz* pMatriz,char* Hora_Decola);
