@@ -1,7 +1,8 @@
 #include "Item_Matriz.h"
 #include "Lista_de_Voos.h"
 #include "Dados_Voo.h"
-
+#ifndef MATRIZ_VOO_H
+#define MATRIZ_VOO_H
 typedef struct {
   TItem_Matriz* M[24][24];
   int Total_De_Voos;
@@ -41,3 +42,4 @@ void Matriz_Esparca(tMatriz* pMatriz);
 /*Verificar se o numero de posicoes da matriz sem voos
 cadastrados e,no minimo,o dobro daquelas com 1 voo
 cadastrado*/
+#endif
