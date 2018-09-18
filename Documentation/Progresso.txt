@@ -4,7 +4,7 @@
 TAD DADOS_VOO{
   -> .h e .c        ->PRONTO -> Autores[SAMUEL E YURI]
   -> Testado?       -> SIMM!Compilou e rodou de acordo com oq fiz no main individual de teste(Pra quem quiser tentar testar tem o EXEC_TESTE_DADOS_VOO ja compilado ent dê "./EXEC_TESTE_DADOS_VOO" ou se quiser compilar o seu dê "clang Teste_Dados_Voo.c -o EXEC ../Sources/Dados_Voo.c")!
-  ->OBS:            -> O .h apresenta erros estranhos e sem nexo no linter do ATOM, provavelmente apos a finalização do makefile isso suma.//--TAALVEZZ--//
+  ->OBS:            ->
 }   ->>>>>>ATENÇÃO! TAD FUNCIONAL! NÃO ALTERE SEM AVISAR OU TESTAR POSTERIORMENTE!!!<<<<<<<<<<<<<<<<<<<<----
 
 
@@ -36,22 +36,22 @@ TAD ITEM_MATRIZ{
 TAD MATRIZ_VOOS{
 -> .h e .c        ->EM DESENVOLVIMENTO -> AUTORES[ARYELS E YURI]
 ->Funções{
-  A ----->FEITA
-  B ----->FEITA
-  C ----->FEITA
-  D ----->FEITA
-  E ----->FEITA
-  F ----->FEITA
-  G ----->FEITA
-  H ----->FEITA
-  I ----->FEITA
-  J ----->FEITA
-  K ----->FEITA(gostaria de fazer com o set pq provavelmente o atoi ta errado)
-  L ----->FEITA(gostaria fazer com o set pq provavelmente o atoi ta errado)
-  M ----->FEITA
+  A ----->FEITA ->Funcionando!
+  B ----->FEITA ->Funcionando!
+  C ----->FEITA ->Funcionando!
+  D ----->FEITA ->APRESENTANDO ERRO DE SEGMENTATION ERRO!!
+  E ----->FEITA ->Funcionando!
+  F ----->FEITA ->Funcionando!
+  G ----->FEITA ->Funcionando!
+  H ----->FEITA ->Funcionando!
+  I ----->FEITA ->Funcionando!
+  J ----->FEITA ->Funcionando!
+  K ----->FEITA ->Funcionando!
+  L ----->FEITA ->Funcionando!
+  M ----->FEITA ->Funcionando!
 }
--> Testado?       -> NÃO!!
-->OBS:            -> O .h apresenta erros estranhos e sem nexo no linter do ATOM, provavelmente apos a finalização do makefile isso suma.//--TAALVEZZ--//
+-> Testado?       -> SIM!SÓ NAO ESTA TOTALMENTE PRONTA!
+->OBS:            ->
 }
                                 //---------TADS---------\\
 
@@ -62,7 +62,7 @@ TAD MATRIZ_VOOS{
 
                                 \\---------MAIN---------//
 MAIN{
-  AINDA NEM COMEÇAMOS BB.. Pelo menos o arquivo em branco ta criado...
+   ->>>>>VAMOS COMEÇAR GGWP!!!
 }
 MAKEFILE{
   YURA CRIOU UM MAKEFILE COM A BUNDA.. TA AI PRA QUEM SOUBER MEXER COM ISSO..

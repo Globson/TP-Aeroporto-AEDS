@@ -18,7 +18,7 @@ int main(int argc, char const *argv[]) {
   pVooRemov=&pVoo_REMOVIDO;
   pVooProc=&pVoo_PROCURADO;
   int retorno_ListaVazia,Removido,Procurado;
-  int numero_voos=3,N_Voos;
+  int numero_voos=1,N_Voos;
   int U_ATT;
 //Parte dos itens Voo
 
@@ -77,6 +77,8 @@ int main(int argc, char const *argv[]) {
 //Teste do Item_Matriz
 Inicializa_Item_Matriz(&Item_M);
 SetLista_de_Voos(&Item_M,pLista1);
+SetNumero_de_Voos(&Item_M, numero_voos);
+SetNumero_de_Voos(&Item_M, numero_voos);
 SetNumero_de_Voos(&Item_M, numero_voos);
 SetUltima_Atualizacao(&Item_M);
 pLista2=GetLista_de_Voos(&Item_M);

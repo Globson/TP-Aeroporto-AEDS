@@ -77,34 +77,34 @@ int Insere_Voo_Matriz(tMatriz* pMatriz,TVoo* Voo){
 
 
 
-TVoo Remove_Voo_Matriz(tMatriz* pMatriz,int VID){ //Função retorna uma variavel do tipo TVoo, por isso então, Criei uma variavel do mesmo tipo para receber o retorno dessa função.//YURICABAÇO//
-    TVoo Voo;
-    InicializaVoo(&Voo);
+int Remove_Voo_Matriz(tMatriz* pMatriz,TVoo* pVoo,int VID){ //Função retorna 1 para se caso voo tenha sido removido com sucesso e 0 caso nao, alem de passar pelo parametro de ponteiro tipo TVoo uma copia do Tipo Voo removido, por isso salve uma nova variavel Tvoo pois a função dara free na memoria da celula q abrigava o Voo.//YURICABAÇO//
     int aux = 0 ;
     for ( size_t i = 0; i < count; i++) {
         for ( size_t j = 0; j < count; j++) {
-            aux = Remove_Voo(&pMatriz->M[i][j].Lista,&Voo,VID);
+            aux = Remove_Voo(&pMatriz->M[i][j].Lista,pVoo,VID);
             if(aux == 1){
                 SetNumero_de_Voos(&pMatriz->M[i][j],0);
                 SetHora_Ultima_Atualizacao_Matriz(pMatriz);
+                return 1;
             }
         }
     }
-    return Voo;
+    return 0;
 }
 
 
 
 
-TVoo Procurar_Voo_Matriz(tMatriz* pMatriz,int VID){ //Função retorna endereço para ponteiro do Tipo TVoo (Endereço de um Voo dentro de uma celula da lista encadeada.)//
-    TVoo Voo;
-    InicializaVoo(&Voo);
+int Procurar_Voo_Matriz(tMatriz* pMatriz,TVoo* pVoo,int VID){ //Função retorna 1 para se caso voo foi encontrado e 0 caso nao,alem de passar um endereço para ponteiro do Tipo TVoo (Endereço de um Voo dentro de uma celula da lista encadeada.)por parametro.//
+    int aux=0;                                                          //ATENÇÃO! CRIE UM PONTEIRO DO TIPO TVoo E UMA VARIAVEL (FAÇA O PONTEIRO APONTAR PARA A VARIAVEL E ENT O PASSE POR PARAMETRO) PARA SALVAR O VOO FORA DA MEMORIA DA FUNÇÃO.
     for (size_t i = 0; i < count; i++) {
         for (size_t j = 0; j < count; j++) {
-            Procura_Voo(&pMatriz->M[i][j].Lista,&Voo,VID);
+            aux = Procura_Voo(&pMatriz->M[i][j].Lista,pVoo,VID);
+            if(aux == 1){return 1;}
         }
     }
-    return Voo;
+    return 0;
+
 }
 
 
@@ -162,7 +162,7 @@ void Imprimir_Voos_Pouso(tMatriz* pMatriz,char* Hora_Previsto){
 
 
 
-void Imprimir_Matriz(tMatriz* pMatriz){
+void Imprimir_Matriz(tMatriz* pMatriz){ //Imprime apenas onde há Voos cadastrados(mais funcional logico)//
     TLista* Aux;
     int i,j;
     for ( i = 0; i < count; i++) {
@@ -171,6 +171,19 @@ void Imprimir_Matriz(tMatriz* pMatriz){
             if(pMatriz->M[i][j].Numero_de_Voos > 0){
             printf("---------\n->Partida: %d Horas\n->Previsao:%d Horas\n",i,j );
             Imprime_Lista(Aux);}
+        }
+    }
+}
+
+
+void Imprimir_Toda_Matriz(tMatriz* pMatriz){
+    TLista* Aux;
+    int i,j;
+    for ( i = 0; i < count; i++) {
+        for ( j = 0; j < count; j++) {
+            Aux= &pMatriz->M[i][j].Lista;
+            printf("---------\n->Partida: %d Horas\n->Previsao:%d Horas\n",i,j );
+            Imprime_Lista(Aux);
         }
     }
 }

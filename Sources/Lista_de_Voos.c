@@ -48,7 +48,7 @@ int Remove_Voo(TLista* pLista,TVoo* pVoo_Aux,int VID_R){    //Essa função reto
     pAux_Atual->pProx = pAux_Prox->pProx;
     free(pAux_Prox);
     if(pLista->pUltimo->pProx != NULL){
-      pLista->pUltimo = pLista->pUltimo->pProx->pProx; //TODO MERDA DETECTADA!!
+      pLista->pUltimo = pLista->pUltimo->pProx;                                    //-----//Marcador
       pLista->pUltimo->pProx = NULL;}
       return 1;}
     return 0;}
@@ -56,7 +56,7 @@ int Remove_Voo(TLista* pLista,TVoo* pVoo_Aux,int VID_R){    //Essa função reto
 
 
 int Procura_Voo(TLista* pLista,TVoo* pVoo_Aux,int VID_P){ // A função devolve o endereço do TipoVoo que contem o VID pelo ponteiro TVoo passado por parametro e retorna 1 se isso ocorre corretamente e 0 se nao é encontrado.//
-  TCelula* Aux;                                           //ATENÇÃO! CRIE UM PONTEIRO DO TIPO TVoo E PASSE POR PARAMETRO PARA ARMAZENAR O ENDEREÇO DO TVOO.//
+  TCelula* Aux;                                          //ATENÇÃO! CRIE UM PONTEIRO DO TIPO TVoo E UMA VARIAVEL (FAÇA O PONTEIRO APONTAR PARA A VARIAVEL E ENT O PASSE POR PARAMETRO) PARA SALVAR O VOO FORA DA MEMORIA//
   Aux= pLista->pPrimeiro->pProx;
   while(Aux != NULL && Aux->Item.VID != VID_P){
     Aux=Aux->pProx;}
@@ -67,8 +67,8 @@ int Procura_Voo(TLista* pLista,TVoo* pVoo_Aux,int VID_P){ // A função devolve 
   }
 
 
-//ATENÇÃO APAGAR FUNÇÃO IMPRIME ANTES DE ENTREGAR// ->> FUNÇÃO CRIADA APENAS PARA TESTE DE LISTA<<-------
-void Imprime_Lista(TLista* pLista){ //--------------->> Função Apenas para teste separado <<----------------
+
+void Imprime_Lista(TLista* pLista){ 
     TCelula* pAux;
     pAux = pLista->pPrimeiro->pProx;
     while(pAux != NULL){

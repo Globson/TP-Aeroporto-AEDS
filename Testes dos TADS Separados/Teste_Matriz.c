@@ -82,11 +82,13 @@ int main(int argc, char const *argv[]) {
   Insere_Voo_Matriz(&Matriz,&Voo3);
   Imprimir_Matriz(&Matriz);
   Matriz_Esparca(&Matriz);
-  scanf("%d",&Removido );
-  *pVooRemov=Procurar_Voo_Matriz(&Matriz,Removido);
-  printf("%s\n",pVoo_REMOVIDO.Hora_Decola);
+  scanf("%d",&Procurado );
+  Removido=Remove_Voo_Matriz(&Matriz,&pVoo_REMOVIDO,Procurado);
+  if(Removido == 1 ){
+  printf("\nHora do Voo removido:%s\n",pVoo_REMOVIDO.Hora_Decola);}
+  else{printf("Voo a ser remove nao encontrado!\n");}
   Imprimir_Matriz(&Matriz);
-
+  //Procurar_Voo_Matriz apresentando segmentation erro. Muito estranho mas tem algum erro
 
   return 0;
 }
