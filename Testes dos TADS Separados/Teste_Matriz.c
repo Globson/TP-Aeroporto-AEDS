@@ -7,9 +7,9 @@
 int main(int argc, char const *argv[]) {
   TLista Lista1,*pLista1;
   TVoo Voo1,*pVoo1=NULL,Voo2,*pVoo2=NULL,Voo3,*pVoo3,pVoo_REMOVIDO,*pVooRemov,pVoo_PROCURADO,*pVooProc;
-  char horad[10]="21:50",horap[10]="02:00",aeroc[10]="CPD",aerop[10]="ADC1";
+  char horad[10]="22:50",horap[10]="20:00",aeroc[10]="CPD",aerop[10]="ADC1";
   char horad2[10]="22:20",horap2[10]="20:43",aeroc2[10]="ASD",aerop2[10]="ASP2";
-  char horad3[10]="21:20",horap3[10]="20:43",aeroc3[10]="ACE",aerop3[10]="AMG3";
+  char horad3[10]="21:20",horap3[10]="20:00",aeroc3[10]="ACE",aerop3[10]="AMG3";
   int pista1=2,pista2=3,pista3=1;
   pVoo1=&Voo1;
   pVoo2=&Voo2;
@@ -82,11 +82,12 @@ int main(int argc, char const *argv[]) {
   Insere_Voo_Matriz(&Matriz,&Voo3);
   Imprimir_Matriz(&Matriz);
   Matriz_Esparca(&Matriz);
+  printf("Entre com VID a ser procurado:");
   scanf("%d",&Procurado );
-  Removido=Remove_Voo_Matriz(&Matriz,&pVoo_REMOVIDO,Procurado);
+  Removido=Procurar_Voo_Matriz(&Matriz,&pVoo_REMOVIDO,Procurado);
   if(Removido == 1 ){
-  printf("\nHora do Voo removido:%s\n",pVoo_REMOVIDO.Hora_Decola);}
-  else{printf("Voo a ser remove nao encontrado!\n");}
+  printf("\nHora do Voo procurado:%s\n",pVoo_REMOVIDO.Hora_Decola);}
+  else{printf("Voo a ser procurado nao encontrado!\n");}
   Imprimir_Matriz(&Matriz);
   //Procurar_Voo_Matriz apresentando segmentation erro. Muito estranho mas tem algum erro
 

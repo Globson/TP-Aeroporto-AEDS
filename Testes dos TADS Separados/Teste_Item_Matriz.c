@@ -62,7 +62,7 @@ int main(int argc, char const *argv[]) {
   retorno_ListaVazia= Lista_Vazia(pLista1);
   printf("Lista_Vazia: %d\n",retorno_ListaVazia);
   Imprime_Lista(pLista1);
-  Procurado= Procura_Voo(pLista1,pVooProc,GetVID(pVoo3));
+  Procurado= Procura_Voo(pLista1,pVooProc,123);
   if(Procurado != 0){
     printf("-----------Horario do voo procurado: %s----------------\n\n",pVoo_PROCURADO.Hora_Decola );}
   else{

@@ -39,7 +39,7 @@ TAD MATRIZ_VOOS{
   A ----->FEITA ->Funcionando!
   B ----->FEITA ->Funcionando!
   C ----->FEITA ->Funcionando!
-  D ----->FEITA ->APRESENTANDO ERRO DE SEGMENTATION ERRO!!
+  D ----->FEITA ->Funcionando!
   E ----->FEITA ->Funcionando!
   F ----->FEITA ->Funcionando!
   G ----->FEITA ->Funcionando!
