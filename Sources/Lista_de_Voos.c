@@ -48,7 +48,7 @@ int Remove_Voo(TLista* pLista,TVoo* pVoo_Aux,int VID_R){    //Essa função reto
     pAux_Atual->pProx = pAux_Prox->pProx;
     free(pAux_Prox);
     if(pLista->pUltimo->pProx != NULL){
-      pLista->pUltimo = pLista->pUltimo->pProx->pProx;
+      pLista->pUltimo = pLista->pUltimo->pProx->pProx; //TODO MERDA DETECTADA!!
       pLista->pUltimo->pProx = NULL;}
       return 1;}
     return 0;}
