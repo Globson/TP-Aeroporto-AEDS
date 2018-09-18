@@ -60,7 +60,7 @@ int Procura_Voo(TLista* pLista,TVoo* pVoo_Aux,int VID_P){ // A função devolve 
   Aux= pLista->pPrimeiro->pProx;
   while(Aux != NULL && Aux->Item.VID != VID_P){
     Aux=Aux->pProx;}
-  if(Aux->Item.VID == VID_P){
+  if(Aux != NULL){
     *pVoo_Aux= Aux->Item;
     return 1;}
     else{return 0;}
@@ -68,7 +68,7 @@ int Procura_Voo(TLista* pLista,TVoo* pVoo_Aux,int VID_P){ // A função devolve 
 
 
 
-void Imprime_Lista(TLista* pLista){ 
+void Imprime_Lista(TLista* pLista){
     TCelula* pAux;
     pAux = pLista->pPrimeiro->pProx;
     while(pAux != NULL){

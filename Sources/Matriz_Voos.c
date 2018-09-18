@@ -99,7 +99,8 @@ int Procurar_Voo_Matriz(tMatriz* pMatriz,TVoo* pVoo,int VID){ //Função retorna
     int aux=0;                                                          //ATENÇÃO! CRIE UM PONTEIRO DO TIPO TVoo E UMA VARIAVEL (FAÇA O PONTEIRO APONTAR PARA A VARIAVEL E ENT O PASSE POR PARAMETRO) PARA SALVAR O VOO FORA DA MEMORIA DA FUNÇÃO.
     for (size_t i = 0; i < count; i++) {
         for (size_t j = 0; j < count; j++) {
-            aux = Procura_Voo(&pMatriz->M[i][j].Lista,pVoo,VID);
+            if(pMatriz->M[i][j].Numero_de_Voos > 0){
+            aux = Procura_Voo(&pMatriz->M[i][j].Lista,pVoo,VID);}
             if(aux == 1){return 1;}
         }
     }
