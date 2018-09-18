@@ -11,7 +11,7 @@ void Inicializa_Item_Matriz(TItem_Matriz* pI_Matriz);          //pI_Matriz é um
 //------------------------------------------------------------------------------------------------------
 //SETS
 void SetLista_de_Voos(TItem_Matriz* pI_Matriz, TLista* pLista);
-void SetNumero_de_Voos(TItem_Matriz* pI_Matriz,int numero_voos);
+void SetNumero_de_Voos(TItem_Matriz* pI_Matriz,int a);
 void SetUltima_Atualizacao(TItem_Matriz* pI_Matriz);
 //------------------------------------------------------------------------------------------------------
 //GETS

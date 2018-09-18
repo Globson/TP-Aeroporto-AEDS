@@ -72,7 +72,7 @@ void Imprime_Lista(TLista* pLista){ //--------------->> Função Apenas para tes
     TCelula* pAux;
     pAux = pLista->pPrimeiro->pProx;
     while(pAux != NULL){
-      printf("-------Inicio de Celula-------\n");
+      printf("\n-------Inicio de Celula-------\n");
       printf("VID: %d\n",pAux->Item.VID);
       printf("Hora de Decolagem: %s\n",pAux->Item.Hora_Decola);
       printf("Hora de Pouso Previsto: %s\n",pAux->Item.Hora_Previsto);

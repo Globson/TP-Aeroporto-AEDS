@@ -12,8 +12,12 @@ void Inicializa_Item_Matriz(TItem_Matriz* pI_Matriz){
 //SETS
 void SetLista_de_Voos(TItem_Matriz* pI_Matriz, TLista* pLista){ //Entra com o ponteiro para o Item Matriz o qual vc quer inserir a Lista(pra qual o ponteiro pLista aponta).//
     pI_Matriz->Lista = *pLista;}
-void SetNumero_de_Voos(TItem_Matriz* pI_Matriz,int numero_voos){ //Entra com o ponteiro para o Item Matriz o qual vc quer inserir o inteiro Numero de voos.//
-  pI_Matriz->Numero_de_Voos = numero_voos;}
+void SetNumero_de_Voos(TItem_Matriz* pI_Matriz,int a){ //Entra com o ponteiro para o Item Matriz o qual vc quer inserir o inteiro Numero de voos.//
+  if(a==1){
+  pI_Matriz->Numero_de_Voos++;}
+  else{
+    pI_Matriz->Numero_de_Voos--;
+  }}
 void SetUltima_Atualizacao(TItem_Matriz* pI_Matriz){ //Entra com o ponteiro para o Item Matriz o qual vc quer inserir o inteiro Ultima_Atualizacao.//
     time_t tp;
     struct tm lt;
