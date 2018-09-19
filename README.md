@@ -33,6 +33,13 @@ git clone https://github.com/Globson/TP-Aeroporto-AEDS
 Compile ele
 ```
 cd TP-Aeroporto-AEDS
+make clang
+./EXEC_CLANG
+```
+
+Compilar pelo GCC
+```
+cd TP-Aeroporto-AEDS
 make
 ./EXEC_GCC
 ```
@@ -55,3 +62,7 @@ Veja [LICENSE](https://github.com/Globson/TP-Aeroporto-AEDS/blob/master/LICENSE)
 * **Yuri Dimitre**  - [Numb4r](https://github.com/Numb4r)
 * **Samuel Sena** - [Globson](https://github.com/Globson)
 * **Aryel Penido** - [AryelPenido](https://github.com/AryelPenido)
+
+## Agredecimentos
+
+* **Pablo Miranda**
