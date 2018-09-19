@@ -51,11 +51,8 @@ void Inicia_Matriz(tMatriz* pMatriz){
         }
     }
 }
-int Insere_Voo_Matriz(tMatriz* pMatriz,TVoo* Voo){
-    //Vai ser pego a hora para achar a posicao na matriz e
-    // dps chamar a funcao da lista daquela posicao da matriz
-    //SetHora_Ultima_Atualizacao_Matriz(pMatriz);
-    char Decolagem[3];
+int Insere_Voo_Matriz(tMatriz* pMatriz,TVoo* Voo){  //Vai ser pego a hora para achar a posicao na matriz e dps chamar a funcao da lista daquela posicao da matriz.//
+    char Decolagem[3];                              //Funcao devolve 1 se inserido com sucesso,0 caso contrario//
     char Previsto[3];
     memcpy( Decolagem, &Voo->Hora_Decola[0], 2);
     memcpy( Previsto, &Voo->Hora_Previsto[0], 2);
@@ -77,7 +74,7 @@ int Insere_Voo_Matriz(tMatriz* pMatriz,TVoo* Voo){
 
 
 
-int Remove_Voo_Matriz(tMatriz* pMatriz,TVoo* pVoo,int VID){ //Função retorna 1 para se caso voo tenha sido removido com sucesso e 0 caso nao, alem de passar pelo parametro de ponteiro tipo TVoo uma copia do Tipo Voo removido, por isso salve uma nova variavel Tvoo pois a função dara free na memoria da celula q abrigava o Voo.//YURICABAÇO//
+int Remove_Voo_Matriz(tMatriz* pMatriz,TVoo* pVoo,int VID){ //Função retorna 1 para se caso voo tenha sido removido com sucesso e 0 caso nao, alem de passar pelo parametro de ponteiro tipo TVoo uma copia do Tipo Voo removido, por isso salve uma nova variavel Tvoo fora da função pois a função dara free na memoria da celula q abrigava o Voo.//
     int aux = 0 ;
     for ( size_t i = 0; i < count; i++) {
         for ( size_t j = 0; j < count; j++) {

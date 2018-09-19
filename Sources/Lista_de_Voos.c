@@ -23,7 +23,7 @@ int Insere_Voo(TLista* pLista,TVoo* pVoo){             //Se inserido com sucesso
   pAux_Atual=pLista->pPrimeiro;
   pAux_Prox=pLista->pPrimeiro->pProx;
   while(pAux_Prox != NULL){
-    if(strcmp((pAux_Prox->Item.Hora_Decola),(pVoo->Hora_Decola))>=0){break;}
+    if(strcmp((pAux_Prox->Item.Hora_Decola),(pVoo->Hora_Decola))>=0){break;}    //Função compara horarios com a função STRCPY() ate encontrar local devido para fazer inserçao.//
     pAux_Atual = pAux_Prox;
     pAux_Prox = pAux_Prox->pProx;}
   pNovo->pProx = pAux_Prox;
@@ -68,7 +68,7 @@ int Procura_Voo(TLista* pLista,TVoo* pVoo_Aux,int VID_P){ // A função devolve 
 
 
 
-void Imprime_Lista(TLista* pLista){
+void Imprime_Lista(TLista* pLista){  //Função criada para facilitar e encapsular as funcoes do TAD Matriz de Voos.//
     TCelula* pAux;
     pAux = pLista->pPrimeiro->pProx;
     while(pAux != NULL){

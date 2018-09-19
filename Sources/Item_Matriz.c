@@ -31,5 +31,5 @@ void SetUltima_Atualizacao(TItem_Matriz* pI_Matriz){ //Entra com o ponteiro para
     return &pI_Matriz->Lista;}
   int GetNumero_de_Voos(TItem_Matriz* pI_Matriz){ //Essa função retorna o o valor inteiro do numero de voos do *Item Matriz passado por parametro.//.
     return pI_Matriz->Numero_de_Voos;}
-  int  GetUltima_Atualizacao(TItem_Matriz* pI_Matriz){//Essa função retorna o ponteiro char da hora da Ultima Atualização do *Item Matriz passado por parametro.//
+  int  GetUltima_Atualizacao(TItem_Matriz* pI_Matriz){//Essa função retorna o valor inteiro da hora da Ultima Atualização do *Item Matriz passado por parametro.//
     return pI_Matriz->Hora_Ultima_Atualizacao;}

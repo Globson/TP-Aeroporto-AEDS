@@ -1,5 +1,6 @@
 #ifndef MENU_H
 #define MENU_H
+//TAD CRIADO APENAS PARA ENCAPSULAR ESTILIZAÇÃO DO MENU INTERATIVO DO PROGRAMA//
 void Cabecalho();
 void MenuArquivoInteraivo();
 void MenuInteraivo();

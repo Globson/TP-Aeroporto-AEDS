@@ -8,26 +8,25 @@
 int main(int argc, char const *argv[]) {
   tMatriz Matriz;
   Inicia_Matriz(&Matriz);
-  while(1){
+  while(1){  //While faz programa sempre retornar a tela inicial após uma operação de qualquer tipo ou especie.//
     int a1 = 0;
   MenuArquivoInteraivo();
-
   while(a1 != 1 && a1 != 2){
     printf("Digite a opção desejada:");
     scanf("%d",&a1);
     if(a1 != 1 && a1 != 2){
       printf("Opção invalida!\n");}}
 
-  if(a1 == 1){
+  if(a1 == 1){ //Parte interativa
     int a2 = 0;
     MenuInteraivo();
-    while(a2 != 1 && a2 != 2 && a2 != 3 && a2 != 4 && a2 != 5 && a2 != 6 && a2 != 7){
+    while(a2 != 1 && a2 != 2 && a2 != 3 && a2 != 4 && a2 != 5 && a2 != 6 && a2 != 7){   //Esse while faz o programa insistir em uma entrada de uma opção valida(ela aparece em outras funções).//
       printf("Digite a opção desejada:");
       scanf("%d",&a2);
       if(a2 != 1 && a2 != 2 && a2 != 3 && a2 != 4 && a2 != 5 && a2 != 6 && a2 != 7){
         printf("Opção invalida!\n");}}
 
-    if(a2 == 1){ //Inserir Voo
+    if(a2 == 1){ //Inserir Voo e entrar com valores para o Voo que deseja inserir.//
       TVoo Voo;
       char Hd[10],Hp[10],Ap[10],Ac[10];
       int Pista,aux=0;
@@ -58,7 +57,7 @@ int main(int argc, char const *argv[]) {
         Rodape();
       }}
 
-    if(a2 == 2){ //Remover Voo
+    if(a2 == 2){ //Remover Voo e imprime na tela se usuario desejar.//
       TVoo Voo;
       int VID,aux=0,aux2=0;
       InicializaVoo(&Voo);
@@ -89,7 +88,7 @@ int main(int argc, char const *argv[]) {
           printf("\n\t->Falha ao remover Voo! Voo nao encontrado.");
           Rodape();}}
 
-    if(a2 == 3){ //Procurar Voo
+    if(a2 == 3){ //Procurar Voo e imprime na tela.//
       TVoo Voo;
       int VID,aux=0;
       Rodape();
@@ -111,7 +110,7 @@ int main(int argc, char const *argv[]) {
         printf("\n\t->Voo nao encontrado!");
         Rodape();}}
 
-    if(a2 == 4){ //Imprime Voo..
+    if(a2 == 4){ //Imprime Voo...//
       int b=0;
       char horaDec[10],horaPou[10];
       Menu_Voos();
@@ -120,7 +119,7 @@ int main(int argc, char const *argv[]) {
         scanf("%d",&b);
         if(b != 1 && b != 2 && b != 3 && b != 4){
           printf("Opção invalida!\n");}}
-      if(b == 1){ //Apenas nas hora de decolagem e pouso
+      if(b == 1){ //Apenas nas hora de decolagem e pouso//
         Rodape();
         printf("Digite o horario de decolagem:");
         scanf("%s",horaDec);
@@ -128,24 +127,24 @@ int main(int argc, char const *argv[]) {
         scanf("%s",horaPou);
         Imprimir_Voos_Decolagem_Pouso(&Matriz,horaDec,horaPou);
         Rodape();}
-      if(b == 2){ //Apenas na hora de decolagem
+      if(b == 2){ //Apenas na hora de decolagem//
         Rodape();
         printf("Digite o horario de decolagem:");
         scanf("%s",horaDec);
         Imprimir_Voos_Decolagem(&Matriz,horaDec);
         Rodape();}
-      if(b == 3){ //Apenas na hora de pouso
+      if(b == 3){ //Apenas na hora de pouso//
         Rodape();
         printf("Digite o horario de pouso:");
         scanf("%s",horaPou);
         Imprimir_Voos_Pouso(&Matriz,horaPou);
         Rodape();}
-      if(b == 4){ //Todos os Voos
+      if(b == 4){ //Todos os Voos//
         Rodape();
         Imprimir_Matriz(&Matriz);
         Rodape();}}
 
-    if(a2 == 5){ //Encontrar faixa..
+    if(a2 == 5){ //Encontrar faixa...//
       int c = 0;
       Menu_Faixa();
       while(c != 1 && c != 2){
@@ -153,14 +152,14 @@ int main(int argc, char const *argv[]) {
         scanf("%d",&c);
         if(c != 1 && c != 2){
           printf("Opção invalida!\n");}}
-      if(c == 1){ //Encontrar faixa de horario de decolagem e pouso com maior numero de Voos cadastrados
+      if(c == 1){ //Encontrar faixa de horario de decolagem e pouso com maior numero de Voos cadastrados.//
         Encontrar_Faixa_Voos_Maior(&Matriz);
         Rodape();}
-      if(c == 2){ //Encontrar faixa de horario de decolagem e pouso com menor numero de Voos cadastrados
+      if(c == 2){ //Encontrar faixa de horario de decolagem e pouso com menor numero de Voos cadastrados.//
         Encontrar_Faixa_Voos_Menor(&Matriz);
         Rodape();}}
 
-    if(a2 == 6){ //Encontrar lista de Voos..
+    if(a2 == 6){ //Encontrar lista de Voos...//
       int d = 0;
       Menu_Lista_De_Voos();
       while(d != 1 && d != 2){
@@ -168,18 +167,21 @@ int main(int argc, char const *argv[]) {
         scanf("%d",&d);
         if(d != 1 && d != 2){
           printf("Opção invalida!\n");}}
-      if(d == 1){ //Encontrar lista de Voos mais recente
+      if(d == 1){ //Encontrar lista de Voos mais recente.//
         Encontrar_Lista_Voos_Mais_Recente(&Matriz);
         Rodape();}
-      if(d == 2){ //Encontrar lista de Voos mais recente
+      if(d == 2){ //Encontrar lista de Voos mais recente.//
         Encontrar_Lista_Voos_Menos_Recente(&Matriz);
         Rodape();}}
 
-    if(a2 == 7){
+    if(a2 == 7){ //Teste da matriz esparca.//
       Rodape();
       Matriz_Esparca(&Matriz);
       Rodape();
     }
+  }
+  if(a1 == 2){ //Parte de arquivo.//
+
   }
 }
   return 0;

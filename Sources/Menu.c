@@ -1,20 +1,20 @@
 #include <stdio.h>
 #include "../Libs/Menu.h"
+//TAD CRIADO APENAS PARA ENCAPSULAR ESTILIZAÇÃO DO MENU INTERATIVO DO PROGRAMA//
 void Cabecalho(){
   printf("\n\n###########################################################################\n ");
   printf("\t\t\tBem vindo ao TAD VOO\n");
   printf("###########################################################################\n\n ");
-
 }
-void Rodape(/* arguments */) {
+void Rodape() {
   printf("\n\n###########################################################################\n\n");
 }
-void MenuArquivoInteraivo(/* arguments */) {
+void MenuArquivoInteraivo() {
   Cabecalho();
   printf("\t1.Entrada interativa->\n");
   printf("\t2.Entrada por arquivo->\n\n");
 }
-void MenuInteraivo(/* arguments */) {
+void MenuInteraivo(){
   Rodape();
   printf("\t1.Inserir Voo\n");
   printf("\t2.Remove Voo\n");
@@ -23,7 +23,6 @@ void MenuInteraivo(/* arguments */) {
   printf("\t5.Encontrar faixa de horario->\n");
   printf("\t6.Lista de Voos mais recentemente->\n");
   printf("\t7.Verificar matriz esparca\n\n");
-
 }
 void Menu_Voos(){
   printf("\n\n\t1.Imprimir todos os Voos da seguinte hora de decolagem e pouso:\n");
