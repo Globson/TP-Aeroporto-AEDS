@@ -185,7 +185,14 @@ int main(int argc, char const *argv[]) {
     }
   }
   if(a1 == 2){ //Parte de arquivo.//
-
+    FILE *f;
+    char nome_arquivo[20];
+    printf("\nDigite o nome do arquivo que deseja abrir:");
+    scanf("%s",nome_arquivo);
+    f = fopen(nome_arquivo,"r");
+    if(f == NULL){
+      printf("\n\tErro!Nao foi possivel abrir arquivo!\n");}
+      else{} //TODO resto da leitura de arquivo
   }
   if(a1 == 9){ //Finalização do programa.//
     int f = 0;
