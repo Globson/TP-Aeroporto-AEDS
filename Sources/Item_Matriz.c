@@ -7,7 +7,7 @@
 void Inicializa_Item_Matriz(TItem_Matriz* pI_Matriz){
   Inicia_Lista(&pI_Matriz->Lista);
   pI_Matriz->Numero_de_Voos = 0;
-  SetUltima_Atualizacao(pI_Matriz);}
+  pI_Matriz->Hora_Ultima_Atualizacao = 0;}
 //------------------------------------------------------------------------------------------------------
 //SETS
 void SetLista_de_Voos(TItem_Matriz* pI_Matriz, TLista* pLista){ //Entra com o ponteiro para o Item Matriz o qual vc quer inserir a Lista(pra qual o ponteiro pLista aponta).//

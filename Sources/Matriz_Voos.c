@@ -252,7 +252,7 @@ da posição encontrada e horário da última alteração*/
   if(aux != 0){
     int converthora = aux/100;
     int convertmin = aux - converthora*100;
-    printf("\nNa Hora atual: %d:%d ->A lista de Voo mais recente se encontra na posicao:\n\n\t->Linha = %d\n\t->Coluna = %d",converthora,convertmin,auxI,auxJ);
+    printf("\nAtualizada na Hora: %d:%d ->A lista de Voo mais recente se encontra na posicao:\n\n\t->Linha = %d\n\t->Coluna = %d",converthora,convertmin,auxI,auxJ);
 
   }else{
     printf("\n\tNenhum Voo cadastrado ate o momento!");
@@ -266,7 +266,7 @@ void Encontrar_Lista_Voos_Menos_Recente(tMatriz* pMatriz){
   int aux = 9999,i,j,auxJ,auxI;
   for ( i = 0; i < count; i++) {
     for ( j = 0; j < count; j++) {
-      if(pMatriz->M[i][j].Hora_Ultima_Atualizacao < aux){
+      if(pMatriz->M[i][j].Hora_Ultima_Atualizacao < aux && pMatriz->M[i][j].Hora_Ultima_Atualizacao != 0 ){
         aux = pMatriz->M[i][j].Hora_Ultima_Atualizacao;
         auxI = i;
         auxJ = j;
@@ -276,7 +276,7 @@ void Encontrar_Lista_Voos_Menos_Recente(tMatriz* pMatriz){
   if(aux != 9999){
     int converthora = aux/100;
     int convertmin = aux - converthora*100;
-    printf("\nNa Hora atual: %d:%d ->A lista de Voo menos recente se encontra na posicao:\n\n\t->Linha = %d\n\t->Coluna = %d",converthora,convertmin,auxI,auxJ);
+    printf("\nAtualizada na Hora : %d:%d ->A lista de Voo menos recente se encontra na posicao:\n\n\t->Linha = %d\n\t->Coluna = %d",converthora,convertmin,auxI,auxJ);
 
   }else{
     printf("\n\tNenhum Voo cadastrado ate o momento!");
