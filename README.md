@@ -34,7 +34,7 @@ Compile ele
 ```
 cd TP-Aeroporto-AEDS
 make
-make clean
+./EXEC_GCC
 ```
 
 **Windows**
