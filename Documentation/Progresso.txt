@@ -50,7 +50,7 @@ TAD MATRIZ_VOOS{
   L ----->FEITA ->Funcionando!
   M ----->FEITA ->Funcionando!
 }
--> Testado?       -> SIM!SÓ NAO ESTA TOTALMENTE PRONTA!
+-> Testado?       -> SIM!
 ->OBS:            ->
 }
                                 //---------TADS---------\\
@@ -62,13 +62,13 @@ TAD MATRIZ_VOOS{
 
                                 \\---------MAIN---------//
 MAIN{
-   ->>>>>VAMOS COMEÇAR GGWP!!!
+   ->PARTE INTERATIVA PRONTA! ->> ULTIMA COISA->> PARTE DE ENTRADA DE ARQUIVO.
 }
 MAKEFILE{
-  YURA CRIOU UM MAKEFILE COM A BUNDA.. TA AI PRA QUEM SOUBER MEXER COM ISSO..
+  ->>Feito e Funcionando!
 }
 TESTES{
-  GROBS CRIOU A PASTA HOJE(14/09[SEXTA]) E ALGUNS .C PARA INICIAR OS TESTES, QUANDO TIVER ATUALIZACOES NOVAS COMENTO AQUI..///
+  ->TODOS OS TADS TESTADOS!
 }
                                 //---------MAIN---------\\
 
@@ -79,7 +79,7 @@ TESTES{
 
                             \\---------DOCUMENTAÇÃO---------//
 
-                    OOO KCT ALGUEM TEM Q COMEÇAR ESSA MERDA OU A GENTE TEM Q COMBINAR DE CADA UM ESCREVER OQ FEZ SEI NNN!
+                    ARYELS TA FAZENDO!
 
 
 
