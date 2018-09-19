@@ -45,6 +45,8 @@
 # Kernel Module Compile Results
 *.mod*
 *.cmd
+# Arquivos binarios
+EXEC_*
 .tmp_versions/
 modules.order
 Module.symvers
