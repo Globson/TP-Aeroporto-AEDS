@@ -41,6 +41,7 @@ int GetHora_Ultima_Atualizacao_Matriz(tMatriz* pMatriz){
 //------------------------------------------------------------------------------------------------------
 
 void Inicia_Matriz(tMatriz* pMatriz){
+    srand((unsigned)time(NULL));
     SetData(pMatriz);
     pMatriz->Total_De_Voos = 0;
     SetHora_Ultima_Atualizacao_Matriz(pMatriz);

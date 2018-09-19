@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "Libs/Dados_Voo.h"
 #include "Libs/Lista_de_Voos.h"
 #include "Libs/Item_Matriz.h"
@@ -59,13 +60,13 @@ int main(int argc, char const *argv[]) {
       }}
 
     if(a2 == 2){ //Remover Voo e imprime na tela se usuario desejar.//
-      TVoo Voo;
-      int VID,aux=0,aux2=0;
-      InicializaVoo(&Voo);
+      TVoo Voo_R;
+      int VID_R,aux=0,aux2=0;
+      InicializaVoo(&Voo_R);
       Rodape();
       printf("\nEntre com o VID do Voo a ser removido:");
-      scanf("%d",&VID);
-      aux = Remove_Voo_Matriz(&Matriz,&Voo,VID);
+      scanf("%d",&VID_R);
+      aux = Remove_Voo_Matriz(&Matriz,&Voo_R,VID_R);
       if(aux == 1){
         printf("\n\tVoo removido com sucesso!\n");
         printf("\nDeseja imprimir o Voo removido?\n\t1.Sim\n\t2.Nao\n");
@@ -76,12 +77,12 @@ int main(int argc, char const *argv[]) {
             printf("Opção invalida!\n");}}
          if(aux2 == 1){
            printf("\n-------Inicio dos dados do Voo-------\n");
-           printf("VID: %d\n",Voo.VID);
-           printf("Hora de Decolagem: %s\n",Voo.Hora_Decola);
-           printf("Hora de Pouso Previsto: %s\n",Voo.Hora_Previsto);
-           printf("Numero da Pista: %d\n",Voo.Pista);
-           printf("Aeroporto de Chegada: %s\n",Voo.Aeroporto_Chegada);
-           printf("Aeroporto de Partida: %s\n",Voo.Aeroporto_Partida);
+           printf("VID: %d\n",Voo_R.VID);
+           printf("Hora de Decolagem: %s\n",Voo_R.Hora_Decola);
+           printf("Hora de Pouso Previsto: %s\n",Voo_R.Hora_Previsto);
+           printf("Numero da Pista: %d\n",Voo_R.Pista);
+           printf("Aeroporto de Chegada: %s\n",Voo_R.Aeroporto_Chegada);
+           printf("Aeroporto de Partida: %s\n",Voo_R.Aeroporto_Partida);
            printf("---------Fim dos dados do Voo--------\n\n");
            Rodape();
          }else{Rodape();}
@@ -90,21 +91,22 @@ int main(int argc, char const *argv[]) {
           Rodape();}}
 
     if(a2 == 3){ //Procurar Voo e imprime na tela.//
-      TVoo Voo;
+      TVoo Voo_P;
+      InicializaVoo(&Voo_P);
       int VID,aux=0;
       Rodape();
       printf("\nEntre com o VID do Voo a ser procurado:");
       scanf("%d",&VID);
-      aux = Procurar_Voo_Matriz(&Matriz,&Voo,VID);
+      aux = Procurar_Voo_Matriz(&Matriz,&Voo_P,VID);
       if(aux == 1){
         printf("\n\t->Voo encontrado!");
         printf("\n-------Inicio dos dados do Voo-------\n");
-        printf("VID: %d\n",Voo.VID);
-        printf("Hora de Decolagem: %s\n",Voo.Hora_Decola);
-        printf("Hora de Pouso Previsto: %s\n",Voo.Hora_Previsto);
-        printf("Numero da Pista: %d\n",Voo.Pista);
-        printf("Aeroporto de Chegada: %s\n",Voo.Aeroporto_Chegada);
-        printf("Aeroporto de Partida: %s\n",Voo.Aeroporto_Partida);
+        printf("VID: %d\n",Voo_P.VID);
+        printf("Hora de Decolagem: %s\n",Voo_P.Hora_Decola);
+        printf("Hora de Pouso Previsto: %s\n",Voo_P.Hora_Previsto);
+        printf("Numero da Pista: %d\n",Voo_P.Pista);
+        printf("Aeroporto de Chegada: %s\n",Voo_P.Aeroporto_Chegada);
+        printf("Aeroporto de Partida: %s\n",Voo_P.Aeroporto_Partida);
         printf("---------Fim dos dados do Voo--------\n\n");
         Rodape();
       }else{
@@ -186,14 +188,116 @@ int main(int argc, char const *argv[]) {
   }
   if(a1 == 2){ //Parte de arquivo.//
     FILE *f;
-    char nome_arquivo[20];
+    char nome_arquivo[20],comparador[1];
     printf("\nDigite o nome do arquivo que deseja abrir:");
     scanf("%s",nome_arquivo);
     f = fopen(nome_arquivo,"r");
     if(f == NULL){
       printf("\n\tErro!Nao foi possivel abrir arquivo!\n");}
-      else{} //TODO resto da leitura de arquivo
-  }
+      else{
+        printf("\n\tArquivo aberto com sucesso!\n");
+        while(fscanf(f,"%s",comparador) != EOF){
+            if(strcmp(comparador,"a") == 0){ //Inicia Matriz//
+              printf("\n\tOperacao ja foi realizada\n");}
+
+            if(strcmp(comparador,"b") == 0){ //Insere Voo por arquivo//
+              TVoo Voo;
+              char Ap[10],Ac[10],Hd[10],Hp[10];
+              int A_pista,aux=0;
+              InicializaVoo(&Voo);
+              SetVID(&Voo);
+              fscanf(f,"%s",Hd);
+              fscanf(f,"%s",Hp);
+              fscanf(f,"%s",Ap);
+              fscanf(f,"%s",Ac);
+              fscanf(f,"%d",&A_pista);
+              SetHora_Decola(&Voo,Hd);
+              SetHora_Previsto(&Voo,Hp);
+              SetPista(&Voo,A_pista);
+              SetAeroporto_Chegada(&Voo,Ac);
+              SetAeroporto_Partida(&Voo,Ap);
+              aux = Insere_Voo_Matriz(&Matriz,&Voo);
+              if(aux==1){
+                printf("\n\tUm Voo inserido por arquivo com sucesso!");
+                Rodape();
+              }else{
+                printf("\n\tVoo nao inserido por arquivo por falta de memoria!");
+                Rodape();
+              }
+            }
+            if(strcmp(comparador,"c") == 0){ //Remove Voo por arquivo//
+              TVoo Voo_R;
+              int VID_A,aux=0;
+              InicializaVoo(&Voo_R);
+              fscanf(f,"%d",&VID_A);
+              aux = Remove_Voo_Matriz(&Matriz,&Voo_R,VID_A);
+              if(aux == 1){
+                printf("\n\tUm Voo removido com sucesso por arquivo!\n");
+                }else{
+                  printf("\n\t->Falha ao remover Voo por arquivo! Voo nao encontrado.");
+                  Rodape();}}
+
+            if(strcmp(comparador,"d") == 0){ //Procura Voo por arquivo//
+              TVoo Voo_P;
+              int VID_A,aux=0;
+              InicializaVoo(&Voo_P);
+              fscanf(f,"%d",&VID_A);
+              aux = Procurar_Voo_Matriz(&Matriz,&Voo_P,VID_A);
+              if(aux == 1){
+                printf("\n\t->Voo encontrado por arquivo!");
+                printf("\n-------Inicio dos dados do Voo-------\n");
+                printf("VID: %d\n",Voo_P.VID);
+                printf("Hora de Decolagem: %s\n",Voo_P.Hora_Decola);
+                printf("Hora de Pouso Previsto: %s\n",Voo_P.Hora_Previsto);
+                printf("Numero da Pista: %d\n",Voo_P.Pista);
+                printf("Aeroporto de Chegada: %s\n",Voo_P.Aeroporto_Chegada);
+                printf("Aeroporto de Partida: %s\n",Voo_P.Aeroporto_Partida);
+                printf("---------Fim dos dados do Voo--------\n\n");
+                Rodape();}}
+
+            if(strcmp(comparador,"e") == 0){ //Imprime Voos decolagem e pouso por arquivo//
+              char Hd[10],Hp[10];
+              fscanf(f,"%s",Hd);
+              fscanf(f,"%s",Hp);
+              Imprimir_Voos_Decolagem_Pouso(&Matriz,Hd,Hp);
+              Rodape();}
+
+            if(strcmp(comparador,"f") == 0){ //Imprime Voos decolagem//
+              char Hd[10];
+              fscanf(f,"%s",Hd);
+              Imprimir_Voos_Decolagem(&Matriz,Hd);
+              Rodape();}
+
+            if(strcmp(comparador,"g") == 0){ //Imprime Voos de pouso//
+              char Hp[10];
+              fscanf(f,"%s",Hp);
+              Imprimir_Voos_Pouso(&Matriz,Hp);
+              Rodape();}
+
+            if(strcmp(comparador,"h") == 0){ //Imprime todos voos cadastrados//
+              Imprimir_Matriz(&Matriz);}
+
+            if(strcmp(comparador,"i") == 0){ //Encontrar faixa de voos maior//
+              Encontrar_Faixa_Voos_Maior(&Matriz);
+              Rodape();}
+
+            if(strcmp(comparador,"j") == 0){ //Encontrar faixa de Voos menos.//
+              Encontrar_Faixa_Voos_Menor(&Matriz);
+              Rodape();}
+
+            if(strcmp(comparador,"k") == 0){ //Encontrar lista de Voos mais recente.//
+              Encontrar_Lista_Voos_Mais_Recente(&Matriz);
+              Rodape();}
+
+            if(strcmp(comparador,"l") == 0){ //Encontrar faix de Voos menos recente.//
+              Encontrar_Lista_Voos_Menos_Recente(&Matriz);
+              Rodape();}
+
+            if(strcmp(comparador,"m") == 0){ //Verificar se matriz é esparça.//
+              Matriz_Esparca(&Matriz);
+              Rodape();}}
+        fclose(f);
+      }}
   if(a1 == 9){ //Finalização do programa.//
     int f = 0;
     printf("\nDeseja realmente finalizar a execução do programa?\n\t1.Sim\n\t2.Nao\n");

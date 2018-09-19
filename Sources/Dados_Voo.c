@@ -17,8 +17,7 @@ void InicializaVoo(TVoo* pVoo){
 
 // SETS
 void SetVID(TVoo* pVoo){     //Função gera valor de VID Aleatorio no unico segundo em que ela roda.//
-  srand((unsigned)time(NULL));   //ATENÇÃO!!!----SE FUNÇÃO RODAR MAIS DE UMA VEZ NO MESMO SEGUNDO PARA DOS VOOS DIFERENTES, OS 2 TERÃO O MESMO NUMERO DE VID!!!------///
-  pVoo->VID=(rand()%1000);}
+pVoo->VID=(rand()%1000);}    //ATENÇÃO!!!----SE FUNÇÃO RODAR MAIS DE UMA VEZ NO MESMO SEGUNDO PARA DOS VOOS DIFERENTES, OS 2 TERÃO O MESMO NUMERO DE VID!!!------///
 
 
 void SetHora_Decola(TVoo* pVoo,char hora[]){
@@ -51,7 +50,7 @@ char* GetHora_Decola(TVoo* pVoo){return pVoo->Hora_Decola;} //Função retorna e
 char* GetHora_Previsto(TVoo* pVoo){return pVoo->Hora_Previsto;}
 
 
-int GetPista(TVoo* pVoo){return pVoo->Pista;} //A função retorna o valor int da pista.// 
+int GetPista(TVoo* pVoo){return pVoo->Pista;} //A função retorna o valor int da pista.//
 
 
 
