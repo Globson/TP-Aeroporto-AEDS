@@ -12,7 +12,8 @@ void Rodape() {
 void MenuArquivoInteraivo() {
   Cabecalho();
   printf("\t1.Entrada interativa->\n");
-  printf("\t2.Entrada por arquivo->\n\n");
+  printf("\t2.Entrada por arquivo->\n");
+  printf("\t9.Finalizar programa->\n\n");
 }
 void MenuInteraivo(){
   Rodape();

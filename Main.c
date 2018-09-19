@@ -11,10 +11,10 @@ int main(int argc, char const *argv[]) {
   while(1){  //While faz programa sempre retornar a tela inicial após uma operação de qualquer tipo ou especie.//
     int a1 = 0;
   MenuArquivoInteraivo();
-  while(a1 != 1 && a1 != 2){
+  while(a1 != 1 && a1 != 2 && a1 != 9){
     printf("Digite a opção desejada:");
     scanf("%d",&a1);
-    if(a1 != 1 && a1 != 2){
+    if(a1 != 1 && a1 != 2 && a1 != 9){
       printf("Opção invalida!\n");}}
 
   if(a1 == 1){ //Parte interativa
@@ -33,6 +33,7 @@ int main(int argc, char const *argv[]) {
       InicializaVoo(&Voo);
       SetVID(&Voo);
       Rodape();
+      printf("\t->Formato da hora: HH:MM ->24Hrs\n\n");
       printf("Entre com o horario de decolagem do Voo:");
       scanf("%s",Hd);
       printf("\nEntre com o horario de pouso do Voo:");
@@ -121,6 +122,7 @@ int main(int argc, char const *argv[]) {
           printf("Opção invalida!\n");}}
       if(b == 1){ //Apenas nas hora de decolagem e pouso//
         Rodape();
+        printf("\t->Formato da hora: HH:MM ->24Hrs\n\n");
         printf("Digite o horario de decolagem:");
         scanf("%s",horaDec);
         printf("Digite o horario de pouso:");
@@ -129,12 +131,14 @@ int main(int argc, char const *argv[]) {
         Rodape();}
       if(b == 2){ //Apenas na hora de decolagem//
         Rodape();
+        printf("\t->Formato da hora: HH:MM ->24Hrs\n\n");
         printf("Digite o horario de decolagem:");
         scanf("%s",horaDec);
         Imprimir_Voos_Decolagem(&Matriz,horaDec);
         Rodape();}
       if(b == 3){ //Apenas na hora de pouso//
         Rodape();
+        printf("\t->Formato da hora: HH:MM ->24Hrs\n\n");
         printf("Digite o horario de pouso:");
         scanf("%s",horaPou);
         Imprimir_Voos_Pouso(&Matriz,horaPou);
@@ -183,6 +187,20 @@ int main(int argc, char const *argv[]) {
   if(a1 == 2){ //Parte de arquivo.//
 
   }
-}
+  if(a1 == 9){ //Finalização do programa.//
+    int f = 0;
+    printf("\nDeseja realmente finalizar a execução do programa?\n\t1.Sim\n\t2.Nao\n");
+    while(f != 1 && f != 2){
+      printf("Digite a opção desejada:");
+      scanf("%d",&f);
+      if(f != 1 && f != 2){
+        printf("Opção invalida!\n");}}
+    if(f == 1){
+      printf("\n\t\t  ------------TAD VOO------------\n\n\t\t   Desenvolvedores:\n\t\t    Yuri Dimitre - 3485\n\t\t    Samuel Sena - 3494\n\t\t    Aryel Penido - 3500\n\n\t\t  OBRIGADO POR UTILIZAR O PROGRAMA!");
+      Rodape();
+      break;}
+    if(f == 2){
+      printf("\n\tFinalizacao cancelada!");}}
+    }
   return 0;
 }
