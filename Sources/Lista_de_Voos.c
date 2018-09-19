@@ -72,14 +72,14 @@ void Imprime_Lista(TLista* pLista){
     TCelula* pAux;
     pAux = pLista->pPrimeiro->pProx;
     while(pAux != NULL){
-      printf("\n-------Inicio de Celula-------\n");
+      printf("\n-------Inicio dos dados do Voo-------\n");
       printf("VID: %d\n",pAux->Item.VID);
       printf("Hora de Decolagem: %s\n",pAux->Item.Hora_Decola);
       printf("Hora de Pouso Previsto: %s\n",pAux->Item.Hora_Previsto);
       printf("Numero da Pista: %d\n",pAux->Item.Pista);
       printf("Aeroporto de Chegada: %s\n",pAux->Item.Aeroporto_Chegada);
       printf("Aeroporto de Partida: %s\n",pAux->Item.Aeroporto_Partida);
-      printf("---------Fim da Celula--------\n\n");
+      printf("---------Fim dos dados do Voo--------\n\n");
       pAux=pAux->pProx;
     }
 }

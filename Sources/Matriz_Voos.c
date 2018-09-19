@@ -123,8 +123,9 @@ void Imprimir_Voos_Decolagem_Pouso(tMatriz* pMatriz,char* Hora_Decola,char* Hora
     int iHPrevisto = atoi(Previsto);
     Aux= &pMatriz->M[iHDecola][iHPrevisto].Lista;
     if(pMatriz->M[iHDecola][iHPrevisto].Numero_de_Voos > 0){
-    printf("Voos que pousarao na faixa de horario:->Decolagem: %d Horas /n->Previsao: %d Horas\n",iHDecola,iHPrevisto );
+    printf("\nVoos que pousarao na faixa de horario:\n->Decolagem: %d Horas \n->Pouso: %d Horas\n",iHDecola,iHPrevisto );
     Imprime_Lista(Aux);}
+    else{printf("\n\tNenhum Voo encontrado!");}
 }
 
 
@@ -132,7 +133,7 @@ void Imprimir_Voos_Decolagem_Pouso(tMatriz* pMatriz,char* Hora_Decola,char* Hora
 
 void Imprimir_Voos_Decolagem(tMatriz* pMatriz, char* Hora_Decola){
   TLista* Aux;
-  int i;
+  int i,k=0;
   char Decolagem[3];
   memcpy(Decolagem,&Hora_Decola[0],2);
   Decolagem[2] = '\0';
@@ -140,14 +141,15 @@ void Imprimir_Voos_Decolagem(tMatriz* pMatriz, char* Hora_Decola){
   for ( i = 0; i < count; i++) {
       Aux = &pMatriz->M[iHDecola][i].Lista;
       if(pMatriz->M[iHDecola][i].Numero_de_Voos > 0){
-      printf("Voos que decolarao na faixa de horario:\n->Decolagem: %d Horas /n->Previsao: %d Horas\n",iHDecola,i );
-      Imprime_Lista(Aux);}
-  }
+      printf("\nVoos que decolarao na faixa de horario:\n->Decolagem: %d Horas \n->Pouso: %d Horas\n",iHDecola,i );
+      Imprime_Lista(Aux);
+      k++;}}
+      if(k == 0){printf("\n\tNenhum Voo encontrado!");}
 }
 
 void Imprimir_Voos_Pouso(tMatriz* pMatriz,char* Hora_Previsto){
   TLista* Aux=NULL;
-  int i;
+  int i,k=0;
   char Previsto[3];
   memcpy(Previsto,&Hora_Previsto[0],2);
   Previsto[2] = '\0';
@@ -155,9 +157,10 @@ void Imprimir_Voos_Pouso(tMatriz* pMatriz,char* Hora_Previsto){
   for(i = 0; i < count; i++){
     Aux = &pMatriz->M[i][iPrevisto].Lista;
     if(pMatriz->M[i][iPrevisto].Numero_de_Voos > 0){
-    printf("Voos que pousarao na faixa de horario:\n->Partida: %d Horas\n->Previsao: %d Horas\n",i,iPrevisto );
-    Imprime_Lista(Aux);}
-  }
+    printf("\nVoos que pousarao na faixa de horario:\n->Decolagem: %d Horas\n->Pouso: %d Horas\n",i,iPrevisto );
+    Imprime_Lista(Aux);
+  k++;}}
+  if(k == 0){printf("\n\tNenhum Voo encontrado!");}
 }
 
 
@@ -165,28 +168,28 @@ void Imprimir_Voos_Pouso(tMatriz* pMatriz,char* Hora_Previsto){
 
 void Imprimir_Matriz(tMatriz* pMatriz){ //Imprime apenas onde há Voos cadastrados(mais funcional logico)//
     TLista* Aux;
-    int i,j;
+    int i,j,k=0;
     for ( i = 0; i < count; i++) {
         for ( j = 0; j < count; j++) {
             Aux= &pMatriz->M[i][j].Lista;
             if(pMatriz->M[i][j].Numero_de_Voos > 0){
-            printf("---------\n->Partida: %d Horas\n->Previsao:%d Horas\n",i,j );
-            Imprime_Lista(Aux);}
-        }
-    }
+            printf("Voos cadastrados nos horarios:\n->Partida: %d Horas\n->Pouso:%d Horas\n",i,j );
+            Imprime_Lista(Aux);
+            k++;}}}
+    if(k == 0){printf("\n\tNenhum Voo cadastrado!");}
 }
 
 
 void Imprimir_Toda_Matriz(tMatriz* pMatriz){
-    TLista* Aux;
-    int i,j;
-    for ( i = 0; i < count; i++) {
-        for ( j = 0; j < count; j++) {
-            Aux= &pMatriz->M[i][j].Lista;
-            printf("---------\n->Partida: %d Horas\n->Previsao:%d Horas\n",i,j );
-            Imprime_Lista(Aux);
-        }
-    }
+  TLista* Aux;
+  int i,j,k=0;
+  for ( i = 0; i < count; i++) {
+      for ( j = 0; j < count; j++) {
+          Aux= &pMatriz->M[i][j].Lista;
+          printf("Voos cadastrados nos horarios:\n->Partida: %d Horas\n->Pouso:%d Horas\n",i,j );
+          Imprime_Lista(Aux);
+          k++;}}
+  if(k == 0){printf("\n\tNenhum Voo cadastrado!");}
 }
 
 
@@ -204,9 +207,9 @@ void Encontrar_Faixa_Voos_Maior(tMatriz* pMatriz){
       }
   }
   if(aux == 0){
-      printf("------Nenhum voo cadastrado ate o momento------\n");
+      printf("\n\tNenhum Voo cadastrado ate o momento!");
   }else{
-      printf("Faixa de numeros menor: \n->Numero de voos: %d\n->Horario de Decolagem: %d\n->Horario Previso: %d\n",pMatriz->M[MDecolagem][MPrevisao].Numero_de_Voos,MDecolagem,MPrevisao );
+      printf("\nFaixa de numeros maior: \n\t->Numero de voos: %d\n\t->Horario de Decolagem: %d\n\t->Horario Previso: %d",pMatriz->M[MDecolagem][MPrevisao].Numero_de_Voos,MDecolagem,MPrevisao );
   }
 }
 
@@ -225,9 +228,9 @@ void Encontrar_Faixa_Voos_Menor(tMatriz* pMatriz){
         }
     }
     if(aux == sizeof(int)){
-        printf("-----Nenhum voo cadastrado ate o momento------\n");
+        printf("\n\tNenhum Voo cadastrado ate o momento!");
     }else{
-        printf("Faixa de numeros menor: \n->Numero de voos: %d\n->Horario de Decolagem: %d\n->Horario Previso: %d\n",pMatriz->M[MDecolagem][MPrevisao].Numero_de_Voos,MDecolagem,MPrevisao );
+        printf("\nFaixa de numeros menor: \n\t->Numero de voos: %d\n\t->Horario de Decolagem: %d\n\t->Horario Previso: %d",pMatriz->M[MDecolagem][MPrevisao].Numero_de_Voos,MDecolagem,MPrevisao );
     }
 }
 
@@ -249,10 +252,10 @@ da posição encontrada e horário da última alteração*/
   if(aux != 0){
     int converthora = aux/100;
     int convertmin = aux - converthora*100;
-    printf("Na Hora atual: %d:%d\n A lista de Voo mais recente se encontra:\nNa posicao: Linha = %d \\ Coluna = %d\n",converthora,convertmin,auxI,auxJ);
+    printf("\nNa Hora atual: %d:%d ->A lista de Voo mais recente se encontra na posicao:\n\n\t->Linha = %d\n\t->Coluna = %d",converthora,convertmin,auxI,auxJ);
 
   }else{
-    printf("Nenhum voo cadastrado ate o momento\n");
+    printf("\n\tNenhum Voo cadastrado ate o momento!");
   }
 }
 
@@ -273,10 +276,10 @@ void Encontrar_Lista_Voos_Menos_Recente(tMatriz* pMatriz){
   if(aux != 9999){
     int converthora = aux/100;
     int convertmin = aux - converthora*100;
-    printf("Hora: %d:%d\nNa posicao: Linha = %d \\ Coluna = %d\n",converthora,convertmin,auxI,auxJ);
+    printf("\nNa Hora atual: %d:%d ->A lista de Voo menos recente se encontra na posicao:\n\n\t->Linha = %d\n\t->Coluna = %d",converthora,convertmin,auxI,auxJ);
 
   }else{
-    printf("Nenhum voo cadastrado ate o momento\n");
+    printf("\n\tNenhum Voo cadastrado ate o momento!");
   }
 }
 
@@ -294,8 +297,8 @@ void Matriz_Esparca(tMatriz* pMatriz){
     }
   }
   if (semcadastro*2>comcadastro) {
-    printf("A matriz e esparca\n");
+    printf("\n\t->A matriz e esparca!");
   }else{
-    printf("A matriz nao e esparca\n");
+    printf("\n\t->A matriz nao e esparca!");
   }
 }
