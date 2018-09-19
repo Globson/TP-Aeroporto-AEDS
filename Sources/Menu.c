@@ -26,19 +26,16 @@ void MenuInteraivo(/* arguments */) {
 
 }
 void Menu_Voos(){
-  Rodape();
-  printf("\t1.Imprimir todos os Voos da seguinte hora de decolagem e pouso:\n");
+  printf("\n\n\t1.Imprimir todos os Voos da seguinte hora de decolagem e pouso:\n");
   printf("\t2.Imprimir todos os Voos da seguinte hora de decolagem:\n");
   printf("\t3.Imprimir todos os Voos da seguinte hora de pouso:\n");
   printf("\t4.Imprimir todos os Voos cadastrados\n\n");
 }
 void Menu_Faixa(){
-  Rodape();
-  printf("\t1.Encontrar faixa de horario de decolagem \n\te pouso com maior numero de Voos cadastrados\n\n");
+  printf("\n\n\t1.Encontrar faixa de horario de decolagem \n\te pouso com maior numero de Voos cadastrados\n\n");
   printf("\t2.Encontrar faixa de horario de decolagem \n\te pouso com menor numero de Voos cadastrados\n\n");
 }
 void Menu_Lista_De_Voos(){
-  Rodape();
-  printf("\t1.Encontrar lista de Voos mais recentemente alterada\n\n");
+  printf("\n\n\t1.Encontrar lista de Voos mais recentemente alterada\n\n");
   printf("\t2.Encontrar lista de Voos menos recentemente alterada\n\n");
 }
