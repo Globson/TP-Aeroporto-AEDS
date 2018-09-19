@@ -198,7 +198,7 @@ int main(int argc, char const *argv[]) {
         printf("\n\tArquivo aberto com sucesso!\n");
         while(fscanf(f,"%s",comparador) != EOF){
             if(strcmp(comparador,"a") == 0){ //Inicia Matriz//
-              printf("\n\tOperacao ja foi realizada\n");}
+              printf("\n\tA operacao inicia ja foi realizada\n");}
 
             if(strcmp(comparador,"b") == 0){ //Insere Voo por arquivo//
               TVoo Voo;
@@ -233,6 +233,7 @@ int main(int argc, char const *argv[]) {
               aux = Remove_Voo_Matriz(&Matriz,&Voo_R,VID_A);
               if(aux == 1){
                 printf("\n\tUm Voo removido com sucesso por arquivo!\n");
+                Rodape();
                 }else{
                   printf("\n\t->Falha ao remover Voo por arquivo! Voo nao encontrado.");
                   Rodape();}}
@@ -253,6 +254,9 @@ int main(int argc, char const *argv[]) {
                 printf("Aeroporto de Chegada: %s\n",Voo_P.Aeroporto_Chegada);
                 printf("Aeroporto de Partida: %s\n",Voo_P.Aeroporto_Partida);
                 printf("---------Fim dos dados do Voo--------\n\n");
+                Rodape();
+              }else{
+                printf("\n\t->Voo nao encontrado por arquivo!");
                 Rodape();}}
 
             if(strcmp(comparador,"e") == 0){ //Imprime Voos decolagem e pouso por arquivo//
