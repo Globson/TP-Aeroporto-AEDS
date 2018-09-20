@@ -198,7 +198,8 @@ int main(int argc, char const *argv[]) {
         printf("\n\tArquivo aberto com sucesso!\n");
         while(fscanf(f,"%s",comparador) != EOF){
             if(strcmp(comparador,"a") == 0){ //Inicia Matriz//
-              printf("\n\tA operacao inicia ja foi realizada\n");}
+              printf("\n\tA operacao inicia ja foi realizada!");
+              Rodape();}
 
             if(strcmp(comparador,"b") == 0){ //Insere Voo por arquivo//
               TVoo Voo;
