@@ -171,7 +171,7 @@ void Imprimir_Matriz(tMatriz* pMatriz){ //Imprime apenas onde há Voos cadastrad
         for ( j = 0; j < count; j++) {
             Aux= &pMatriz->M[i][j].Lista;
             if(pMatriz->M[i][j].Numero_de_Voos > 0){
-            printf("Voos cadastrados nos horarios:\n->Partida: %d Horas\n->Pouso:%d Horas\n",i,j );
+            printf("Voos cadastrados nos horarios:\n->Partida: %d Horas\n->Pouso: %d Horas\n",i,j );
             Imprime_Lista(Aux);
             k++;}}}
     if(k == 0){printf("\n\tNenhum Voo cadastrado!");}
