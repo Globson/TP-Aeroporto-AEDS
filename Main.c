@@ -13,19 +13,19 @@ int main(int argc, char const *argv[]) {
     int a1 = 0;
   MenuArquivoInteraivo();
   while(a1 != 1 && a1 != 2 && a1 != 9){
-    printf("Digite a opção desejada:");
+    printf("Digite a opcao desejada:");
     scanf("%d",&a1);
     if(a1 != 1 && a1 != 2 && a1 != 9){
-      printf("Opção invalida!\n");}}
+      printf("Opcao invalida!\n");}}
 
   if(a1 == 1){ //Parte interativa
     int a2 = 0;
     MenuInteraivo();
     while(a2 != 1 && a2 != 2 && a2 != 3 && a2 != 4 && a2 != 5 && a2 != 6 && a2 != 7){   //Esse while faz o programa insistir em uma entrada de uma opção valida(ela aparece em outras funções).//
-      printf("Digite a opção desejada:");
+      printf("Digite a opcao desejada:");
       scanf("%d",&a2);
       if(a2 != 1 && a2 != 2 && a2 != 3 && a2 != 4 && a2 != 5 && a2 != 6 && a2 != 7){
-        printf("Opção invalida!\n");}}
+        printf("Opcao invalida!\n");}}
 
     if(a2 == 1){ //Inserir Voo e entrar com valores para o Voo que deseja inserir.//
       TVoo Voo;
@@ -71,10 +71,10 @@ int main(int argc, char const *argv[]) {
         printf("\n\tVoo removido com sucesso!\n");
         printf("\nDeseja imprimir o Voo removido?\n\t1.Sim\n\t2.Nao\n");
         while(aux2 != 1 && aux2 != 2){
-          printf("Entre com a opção desejada:");
+          printf("Entre com a opcao desejada:");
           scanf("%d",&aux2);
           if(aux2 != 1 && aux2 != 2){
-            printf("Opção invalida!\n");}}
+            printf("Opcao invalida!\n");}}
          if(aux2 == 1){
            printf("\n\t\t-------Inicio dos dados do Voo-------\n");
            printf("\t\t->VID: %d\n",Voo_R.VID);
@@ -118,10 +118,10 @@ int main(int argc, char const *argv[]) {
       char horaDec[10],horaPou[10];
       Menu_Voos();
       while(b != 1 && b != 2 && b != 3 && b != 4){
-        printf("Digite a opção desejada:");
+        printf("Digite a opcao desejada:");
         scanf("%d",&b);
         if(b != 1 && b != 2 && b != 3 && b != 4){
-          printf("Opção invalida!\n");}}
+          printf("Opcao invalida!\n");}}
       if(b == 1){ //Apenas nas hora de decolagem e pouso//
         Rodape();
         printf("\t->Formato da hora: HH:MM ->24Hrs\n\n");
@@ -154,10 +154,10 @@ int main(int argc, char const *argv[]) {
       int c = 0;
       Menu_Faixa();
       while(c != 1 && c != 2){
-        printf("Digite a opção desejada:");
+        printf("Digite a opcao desejada:");
         scanf("%d",&c);
         if(c != 1 && c != 2){
-          printf("Opção invalida!\n");}}
+          printf("Opcao invalida!\n");}}
       if(c == 1){ //Encontrar faixa de horario de decolagem e pouso com maior numero de Voos cadastrados.//
         Encontrar_Faixa_Voos_Maior(&Matriz);
         Rodape();}
@@ -169,10 +169,10 @@ int main(int argc, char const *argv[]) {
       int d = 0;
       Menu_Lista_De_Voos();
       while(d != 1 && d != 2){
-        printf("Digite a opção desejada:");
+        printf("Digite a opcao desejada:");
         scanf("%d",&d);
         if(d != 1 && d != 2){
-          printf("Opção invalida!\n");}}
+          printf("Opcao invalida!\n");}}
       if(d == 1){ //Encontrar lista de Voos mais recente.//
         Encontrar_Lista_Voos_Mais_Recente(&Matriz);
         Rodape();}
@@ -305,12 +305,12 @@ int main(int argc, char const *argv[]) {
       }}
   if(a1 == 9){ //Finalização do programa.//
     int f = 0;
-    printf("\nDeseja realmente finalizar a execução do programa?\n\t1.Sim\n\t2.Nao\n");
+    printf("\nDeseja realmente finalizar a execucao do programa?\n\t1.Sim\n\t2.Nao\n");
     while(f != 1 && f != 2){
-      printf("Digite a opção desejada:");
+      printf("Digite a opcao desejada:");
       scanf("%d",&f);
       if(f != 1 && f != 2){
-        printf("Opção invalida!\n");}}
+        printf("Opcao invalida!\n");}}
     if(f == 1){
       Agradecimentos();
       break;}
