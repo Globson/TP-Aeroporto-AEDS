@@ -18,7 +18,7 @@ void MenuArquivoInteraivo() {
 void MenuInteraivo(){
   Rodape();
   printf("\t1.Inserir Voo\n");
-  printf("\t2.Remove Voo\n");
+  printf("\t2.Remover Voo\n");
   printf("\t3.Procurar Voo\n");
   printf("\t4.Imprimir Voos->\n");
   printf("\t5.Encontrar faixa de horario->\n");
