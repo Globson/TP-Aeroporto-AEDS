@@ -3,6 +3,7 @@
 #include "Item_Matriz.h"
 #include "Lista_de_Voos.h"
 #include "Dados_Voo.h"
+// Declarando struct do Item_Matriz.//
 typedef struct {
   TItem_Matriz M[24][24];
   int Total_De_Voos;
@@ -10,8 +11,8 @@ typedef struct {
   int Hora_Ultima_Atualizacao_Matriz;
 }tMatriz;
 
-
-
+                                                                    /* ---->If you are searching for something out of the ordinary,
+                                                                            I'm sorry to tell you but there are no EASTER EGGS here<--------- */
 //------------------------------------------------------------------------------------------------------
 
 // SETS
@@ -34,13 +35,11 @@ void Imprimir_Voos_Decolagem_Pouso(tMatriz* pMatriz,char* Hora_Decola,char* Hora
 void Imprimir_Voos_Decolagem(tMatriz* pMatriz,char* Hora_Decola);
 void Imprimir_Voos_Pouso(tMatriz* pMatriz,char* Hora_Previsto);
 void Imprimir_Matriz(tMatriz* pMatriz);
-void Imprimir_Toda_Matriz(tMatriz* pMatriz);
 void Encontrar_Faixa_Voos_Maior(tMatriz* pMatriz);//Faixa que tem a maior quantidade de voos
 void Encontrar_Faixa_Voos_Menor(tMatriz* pMatriz);//Faixa que tem a menor quantidade de voos
 void Encontrar_Lista_Voos_Mais_Recente(tMatriz* pMatriz);
 void Encontrar_Lista_Voos_Menos_Recente(tMatriz* pMatriz);
-void Matriz_Esparca(tMatriz* pMatriz);
-/*Verificar se o numero de posicoes da matriz sem voos
+void Matriz_Esparca(tMatriz* pMatriz); /*Verificar se o numero de posicoes da matriz sem voos
 cadastrados e,no minimo,o dobro daquelas com 1 voo
 cadastrado*/
 #endif

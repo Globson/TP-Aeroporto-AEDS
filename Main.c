@@ -76,14 +76,14 @@ int main(int argc, char const *argv[]) {
           if(aux2 != 1 && aux2 != 2){
             printf("Opção invalida!\n");}}
          if(aux2 == 1){
-           printf("\n-------Inicio dos dados do Voo-------\n");
-           printf("VID: %d\n",Voo_R.VID);
-           printf("Hora de Decolagem: %s\n",Voo_R.Hora_Decola);
-           printf("Hora de Pouso Previsto: %s\n",Voo_R.Hora_Previsto);
-           printf("Numero da Pista: %d\n",Voo_R.Pista);
-           printf("Aeroporto de Chegada: %s\n",Voo_R.Aeroporto_Chegada);
-           printf("Aeroporto de Partida: %s\n",Voo_R.Aeroporto_Partida);
-           printf("---------Fim dos dados do Voo--------\n\n");
+           printf("\n\t\t-------Inicio dos dados do Voo-------\n");
+           printf("\t\t->VID: %d\n",Voo_R.VID);
+           printf("\t\t->Hora de Decolagem: %s\n",Voo_R.Hora_Decola);
+           printf("\t\t->Hora de Pouso Previsto: %s\n",Voo_R.Hora_Previsto);
+           printf("\t\t->Numero da Pista: %d\n",Voo_R.Pista);
+           printf("\t\t->Aeroporto de Chegada: %s\n",Voo_R.Aeroporto_Chegada);
+           printf("\t\t->Aeroporto de Partida: %s\n",Voo_R.Aeroporto_Partida);
+           printf("\t\t---------Fim dos dados do Voo--------\n\n");
            Rodape();
          }else{Rodape();}
         }else{
@@ -99,15 +99,15 @@ int main(int argc, char const *argv[]) {
       scanf("%d",&VID);
       aux = Procurar_Voo_Matriz(&Matriz,&Voo_P,VID);
       if(aux == 1){
-        printf("\n\t->Voo encontrado!");
-        printf("\n-------Inicio dos dados do Voo-------\n");
-        printf("VID: %d\n",Voo_P.VID);
-        printf("Hora de Decolagem: %s\n",Voo_P.Hora_Decola);
-        printf("Hora de Pouso Previsto: %s\n",Voo_P.Hora_Previsto);
-        printf("Numero da Pista: %d\n",Voo_P.Pista);
-        printf("Aeroporto de Chegada: %s\n",Voo_P.Aeroporto_Chegada);
-        printf("Aeroporto de Partida: %s\n",Voo_P.Aeroporto_Partida);
-        printf("---------Fim dos dados do Voo--------\n\n");
+        printf("\n\t->Voo encontrado!\n");
+        printf("\n\t\t-------Inicio dos dados do Voo-------\n");
+        printf("\t\t->VID: %d\n",Voo_P.VID);
+        printf("\t\t->Hora de Decolagem: %s\n",Voo_P.Hora_Decola);
+        printf("\t\t->Hora de Pouso Previsto: %s\n",Voo_P.Hora_Previsto);
+        printf("\t\t->Numero da Pista: %d\n",Voo_P.Pista);
+        printf("\t\t->Aeroporto de Chegada: %s\n",Voo_P.Aeroporto_Chegada);
+        printf("\t\t->Aeroporto de Partida: %s\n",Voo_P.Aeroporto_Partida);
+        printf("\t\t---------Fim dos dados do Voo--------\n\n");
         Rodape();
       }else{
         printf("\n\t->Voo nao encontrado!");
@@ -245,15 +245,15 @@ int main(int argc, char const *argv[]) {
               fscanf(f,"%d",&VID_A);
               aux = Procurar_Voo_Matriz(&Matriz,&Voo_P,VID_A);
               if(aux == 1){
-                printf("\n\t->Voo encontrado por arquivo!");
-                printf("\n-------Inicio dos dados do Voo-------\n");
-                printf("VID: %d\n",Voo_P.VID);
-                printf("Hora de Decolagem: %s\n",Voo_P.Hora_Decola);
-                printf("Hora de Pouso Previsto: %s\n",Voo_P.Hora_Previsto);
-                printf("Numero da Pista: %d\n",Voo_P.Pista);
-                printf("Aeroporto de Chegada: %s\n",Voo_P.Aeroporto_Chegada);
-                printf("Aeroporto de Partida: %s\n",Voo_P.Aeroporto_Partida);
-                printf("---------Fim dos dados do Voo--------\n\n");
+                printf("\n\t->Voo encontrado por arquivo!\n");
+                printf("\n\t\t-------Inicio dos dados do Voo-------\n");
+                printf("\t\t->VID: %d\n",Voo_P.VID);
+                printf("\t\t->Hora de Decolagem: %s\n",Voo_P.Hora_Decola);
+                printf("\t\t->Hora de Pouso Previsto: %s\n",Voo_P.Hora_Previsto);
+                printf("\t\t->Numero da Pista: %d\n",Voo_P.Pista);
+                printf("\t\t->Aeroporto de Chegada: %s\n",Voo_P.Aeroporto_Chegada);
+                printf("\t\t->Aeroporto de Partida: %s\n",Voo_P.Aeroporto_Partida);
+                printf("\t\t---------Fim dos dados do Voo--------\n\n");
                 Rodape();
               }else{
                 printf("\n\t->Voo nao encontrado por arquivo!");
@@ -311,8 +311,7 @@ int main(int argc, char const *argv[]) {
       if(f != 1 && f != 2){
         printf("Opção invalida!\n");}}
     if(f == 1){
-      printf("\n\t\t  ------------TAD VOO------------\n\n\t\t   Desenvolvedores:\n\t\t    Yuri Dimitre - 3485\n\t\t    Samuel Sena - 3494\n\t\t    Aryel Penido - 3500\n\n\t\t  OBRIGADO POR UTILIZAR O PROGRAMA!");
-      Rodape();
+      Agradecimentos();
       break;}
     if(f == 2){
       printf("\n\tFinalizacao cancelada!");}}

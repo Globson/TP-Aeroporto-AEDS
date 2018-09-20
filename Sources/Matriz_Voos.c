@@ -13,7 +13,7 @@
 //------------------------------------------------------------------------------------------------------
 
 // SETS
-void SetData(tMatriz* pMatriz){
+void SetData(tMatriz* pMatriz){ //Setando data da variavel para a data atual do computador em que a função é chamada e executada.//
     time_t tp;
     struct tm lt;
     time(&tp);
@@ -21,7 +21,7 @@ void SetData(tMatriz* pMatriz){
     int data=1000000*lt.tm_mday+10000*(lt.tm_mon+1)+1900+lt.tm_year;
     pMatriz->Data = data;
 }
-void SetHora_Ultima_Atualizacao_Matriz(tMatriz* pMatriz){
+void SetHora_Ultima_Atualizacao_Matriz(tMatriz* pMatriz){  //Setando a hora da variavel para a hora atual do computador em que a função é chamada e executada//
     time_t tp;
     struct tm lt;
     time(&tp);
@@ -40,7 +40,7 @@ int GetHora_Ultima_Atualizacao_Matriz(tMatriz* pMatriz){
 }
 //------------------------------------------------------------------------------------------------------
 
-void Inicia_Matriz(tMatriz* pMatriz){
+void Inicia_Matriz(tMatriz* pMatriz){ //Iniciando item por item da matriz.//
     srand((unsigned)time(NULL));
     SetData(pMatriz);
     pMatriz->Total_De_Voos = 0;
@@ -164,7 +164,7 @@ void Imprimir_Voos_Pouso(tMatriz* pMatriz,char* Hora_Previsto){
 
 
 
-void Imprimir_Matriz(tMatriz* pMatriz){ //Imprime apenas onde há Voos cadastrados(mais funcional logico)//
+void Imprimir_Matriz(tMatriz* pMatriz){ //Imprime apenas onde há Voos cadastrados//
     TLista* Aux;
     int i,j,k=0;
     for ( i = 0; i < count; i++) {
@@ -178,22 +178,7 @@ void Imprimir_Matriz(tMatriz* pMatriz){ //Imprime apenas onde há Voos cadastrad
 }
 
 
-void Imprimir_Toda_Matriz(tMatriz* pMatriz){
-  TLista* Aux;
-  int i,j,k=0;
-  for ( i = 0; i < count; i++) {
-      for ( j = 0; j < count; j++) {
-          Aux= &pMatriz->M[i][j].Lista;
-          printf("Voos cadastrados nos horarios:\n->Partida: %d Horas\n->Pouso:%d Horas\n",i,j );
-          Imprime_Lista(Aux);
-          k++;}}
-  if(k == 0){printf("\n\tNenhum Voo cadastrado!");}
-}
-
-
-
-
-void Encontrar_Faixa_Voos_Maior(tMatriz* pMatriz){
+void Encontrar_Faixa_Voos_Maior(tMatriz* pMatriz){ //Função imprime faixa de horario com maior quantidade de voos cadastrados.//
   int i,j,MDecolagem = 0,MPrevisao = 0,aux = 0;
   for ( i = 0; i < count; i++) {
       for ( j = 0; j < count; j++) {
@@ -214,7 +199,7 @@ void Encontrar_Faixa_Voos_Maior(tMatriz* pMatriz){
 
 
 
-void Encontrar_Faixa_Voos_Menor(tMatriz* pMatriz){
+void Encontrar_Faixa_Voos_Menor(tMatriz* pMatriz){ //Função imprime faixa de horario com menor quantidade de voos cadastrados.//
     int i,j,MDecolagem = 0,MPrevisao = 0,aux = sizeof(int);
     for ( i = 0; i < count; i++) {
         for ( j = 0; j < count; j++) {
@@ -235,7 +220,7 @@ void Encontrar_Faixa_Voos_Menor(tMatriz* pMatriz){
 
 
 void Encontrar_Lista_Voos_Mais_Recente(tMatriz* pMatriz){
-/*Encontrar lista de voos mais recentemente alterada. Mostra indices i e j
+/*Encontrar lista de voos mais recentemente alterada. Imprime indices i e j
 da posição encontrada e horário da última alteração*/
   int aux = 0,i,j,auxJ,auxI;
   for ( i = 0; i < count; i++) {
@@ -261,6 +246,8 @@ da posição encontrada e horário da última alteração*/
 
 
 void Encontrar_Lista_Voos_Menos_Recente(tMatriz* pMatriz){
+  /*Encontrar lista de voos menos recentemente alterada. Imprime indices i e j
+  da posição encontrada e horário da última alteração*/
   int aux = 9999,i,j,auxJ,auxI;
   for ( i = 0; i < count; i++) {
     for ( j = 0; j < count; j++) {
@@ -283,7 +270,7 @@ void Encontrar_Lista_Voos_Menos_Recente(tMatriz* pMatriz){
 
 
 
-void Matriz_Esparca(tMatriz* pMatriz){
+void Matriz_Esparca(tMatriz* pMatriz){ //Função printa se matriz é ou nao esparça.//
   int i = 0 ,j = 0 ,semcadastro = 0,comcadastro = 0;
   for ( i = 0; i < count; i++) {
     for ( j = 0; j < count; j++) {

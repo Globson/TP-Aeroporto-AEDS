@@ -16,38 +16,37 @@ void InicializaVoo(TVoo* pVoo){
 //------------------------------------------------------------------------------------------------------
 
 // SETS
-void SetVID(TVoo* pVoo){     //Função gera valor de VID Aleatorio no unico segundo em que ela roda.//
-pVoo->VID=(rand()%1000);}    //ATENÇÃO!!!----SE FUNÇÃO RODAR MAIS DE UMA VEZ NO MESMO SEGUNDO PARA DOS VOOS DIFERENTES, OS 2 TERÃO O MESMO NUMERO DE VID!!!------///
+void SetVID(TVoo* pVoo){     //Função gera valor de VID Aleatorio.//
+pVoo->VID=(rand()%1000);}
 
-
-void SetHora_Decola(TVoo* pVoo,char hora[]){
+void SetHora_Decola(TVoo* pVoo,char hora[]){ //Função realiza Set para o que foi pedido.//
   strcpy(pVoo->Hora_Decola,hora);}
 
 
-void SetHora_Previsto(TVoo* pVoo,char hora[]){
+void SetHora_Previsto(TVoo* pVoo,char hora[]){ //Função realiza Set para o que foi pedido.//
   strcpy(pVoo->Hora_Previsto,hora);}
 
 
-void SetPista(TVoo* pVoo,int pista){
+void SetPista(TVoo* pVoo,int pista){ //Função realiza Set para o que foi pedido.//
   pVoo->Pista = pista;}
 
 
-void SetAeroporto_Partida(TVoo* pVoo,char aeroporto[]){
+void SetAeroporto_Partida(TVoo* pVoo,char aeroporto[]){ //Função realiza Set para o que foi pedido.//
   strcpy(pVoo->Aeroporto_Partida,aeroporto);}
 
 
-void SetAeroporto_Chegada(TVoo* pVoo,char aeroporto[]){
+void SetAeroporto_Chegada(TVoo* pVoo,char aeroporto[]){ //Função realiza Set para o que foi pedido.//
   strcpy(pVoo->Aeroporto_Chegada,aeroporto);}
 //------------------------------------------------------------------------------------------------------
 
 // GETS
-int GetVID(TVoo* pVoo){return pVoo->VID;}
+int GetVID(TVoo* pVoo){return pVoo->VID;}  //A função retorna o valor do VID do Voo.//
 
 
 char* GetHora_Decola(TVoo* pVoo){return pVoo->Hora_Decola;} //Função retorna endereço para o tipo char*//
 
 
-char* GetHora_Previsto(TVoo* pVoo){return pVoo->Hora_Previsto;}
+char* GetHora_Previsto(TVoo* pVoo){return pVoo->Hora_Previsto;} //Função retorna endereço para o tipo char*//
 
 
 int GetPista(TVoo* pVoo){return pVoo->Pista;} //A função retorna o valor int da pista.//

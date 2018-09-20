@@ -48,7 +48,7 @@ int Remove_Voo(TLista* pLista,TVoo* pVoo_Aux,int VID_R){    //Essa função reto
     pAux_Atual->pProx = pAux_Prox->pProx;
     free(pAux_Prox);
     if(pLista->pUltimo->pProx != NULL){
-      pLista->pUltimo = pLista->pUltimo->pProx;                                    //-----//Marcador
+      pLista->pUltimo = pLista->pUltimo->pProx;                                    
       pLista->pUltimo->pProx = NULL;}
       return 1;}
     return 0;}
@@ -68,18 +68,18 @@ int Procura_Voo(TLista* pLista,TVoo* pVoo_Aux,int VID_P){ // A função devolve 
 
 
 
-void Imprime_Lista(TLista* pLista){  //Função criada para facilitar e encapsular as funcoes do TAD Matriz de Voos.//
+void Imprime_Lista(TLista* pLista){  //Função criada para facilitar as funcoes do TAD Matriz de Voos.//
     TCelula* pAux;
     pAux = pLista->pPrimeiro->pProx;
     while(pAux != NULL){
-      printf("\n-------Inicio dos dados do Voo-------\n");
-      printf("VID: %d\n",pAux->Item.VID);
-      printf("Hora de Decolagem: %s\n",pAux->Item.Hora_Decola);
-      printf("Hora de Pouso Previsto: %s\n",pAux->Item.Hora_Previsto);
-      printf("Numero da Pista: %d\n",pAux->Item.Pista);
-      printf("Aeroporto de Chegada: %s\n",pAux->Item.Aeroporto_Chegada);
-      printf("Aeroporto de Partida: %s\n",pAux->Item.Aeroporto_Partida);
-      printf("---------Fim dos dados do Voo--------\n\n");
+      printf("\n\t\t-------Inicio dos dados do Voo-------\n");
+      printf("\t\t->VID: %d\n",pAux->Item.VID);
+      printf("\t\t->Hora de Decolagem: %s\n",pAux->Item.Hora_Decola);
+      printf("\t\t->Hora de Pouso Previsto: %s\n",pAux->Item.Hora_Previsto);
+      printf("\t\t->Numero da Pista: %d\n",pAux->Item.Pista);
+      printf("\t\t->Aeroporto de Chegada: %s\n",pAux->Item.Aeroporto_Chegada);
+      printf("\t\t->Aeroporto de Partida: %s\n",pAux->Item.Aeroporto_Partida);
+      printf("\t\t---------Fim dos dados do Voo--------\n\n");
       pAux=pAux->pProx;
     }
 }

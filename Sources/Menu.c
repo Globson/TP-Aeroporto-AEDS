@@ -3,7 +3,7 @@
 //TAD CRIADO APENAS PARA ENCAPSULAR ESTILIZAÇÃO DO MENU INTERATIVO DO PROGRAMA//
 void Cabecalho(){
   printf("\n\n###########################################################################\n ");
-  printf("\t\t\tBem vindo ao TAD VOO\n");
+  printf("\t\t     Bem vindo ao TADS AEROPORTO\n");
   printf("###########################################################################\n\n ");
 }
 void Rodape() {
@@ -38,4 +38,8 @@ void Menu_Faixa(){
 void Menu_Lista_De_Voos(){
   printf("\n\n\t1.Encontrar lista de Voos mais recentemente alterada\n\n");
   printf("\t2.Encontrar lista de Voos menos recentemente alterada\n\n");
+}
+void Agradecimentos(){
+  printf("\n\t\t  ---------TADS AEROPORTO---------\n\n\t\t   Desenvolvedores:\n\t\t    Yuri Dimitre - 3485\n\t\t    Samuel Sena - 3494\n\t\t    Aryel Penido - 3500\n\n\t\t  OBRIGADO POR UTILIZAR O PROGRAMA!");
+  Rodape();
 }
