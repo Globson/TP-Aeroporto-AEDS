@@ -17,7 +17,7 @@ TAD LISTA_DE_VOOS{
   D -----> PRONTA! ->>FUNCIONANDO!!
 
 }
--> Testado?       -> SIIM! PICA DAS GALAXIAS! TA FUNCIONANDO FILÉ! NÃO ENCOSTEM NESSAS FUNÇOES HEHE SE ALTERAREM ALGO EU COMO VCS!
+-> Testado?       -> SIM!
 ->OBS:
 }
 
@@ -79,7 +79,7 @@ TESTES{
 
                             \\---------DOCUMENTAÇÃO---------//
 
-                    ARYELS TA FAZENDO!
+                                Tudo Feito!!
 
 
 
