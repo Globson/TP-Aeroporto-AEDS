@@ -121,7 +121,7 @@ void Imprimir_Voos_Decolagem_Pouso(tMatriz* pMatriz,char* Hora_Decola,char* Hora
     int iHPrevisto = atoi(Previsto);
     Aux= &pMatriz->M[iHDecola][iHPrevisto].Lista;
     if(pMatriz->M[iHDecola][iHPrevisto].Numero_de_Voos > 0){
-    printf("\nVoos que pousarao na faixa de horario:\n->Decolagem: %d Horas \n->Pouso: %d Horas\n",iHDecola,iHPrevisto );
+    printf("\nVoos da faixa de horario:\n->Decolagem: %d Horas \n->Pouso: %d Horas\n",iHDecola,iHPrevisto );
     Imprime_Lista(Aux);}
     else{printf("\n\tNenhum Voo encontrado!");}
 }
