@@ -192,7 +192,7 @@ void Encontrar_Faixa_Voos_Maior(tMatriz* pMatriz){ //Função imprime faixa de h
   if(aux == 0){
       printf("\n\tNenhum Voo cadastrado ate o momento!");
   }else{
-      printf("\nFaixa de numeros maior: \n\t->Numero de voos: %d\n\t->Horario de Decolagem: %d\n\t->Horario Previso: %d",pMatriz->M[MDecolagem][MPrevisao].Numero_de_Voos,MDecolagem,MPrevisao );
+      printf("\nFaixa de numeros de Voos maior:\n \n\t->Numero de Voos: %d\n\t->Horario de Decolagem: %d\n\t->Horario Previso: %d",pMatriz->M[MDecolagem][MPrevisao].Numero_de_Voos,MDecolagem,MPrevisao );
   }
 }
 
@@ -213,7 +213,7 @@ void Encontrar_Faixa_Voos_Menor(tMatriz* pMatriz){ //Função imprime faixa de h
     if(aux == sizeof(int)){
         printf("\n\tNenhum Voo cadastrado ate o momento!");
     }else{
-        printf("\nFaixa de numeros menor: \n\t->Numero de voos: %d\n\t->Horario de Decolagem: %d\n\t->Horario Previso: %d",pMatriz->M[MDecolagem][MPrevisao].Numero_de_Voos,MDecolagem,MPrevisao );
+        printf("\nFaixa de numeros de Voos menor:\n \n\t->Numero de Voos: %d\n\t->Horario de Decolagem: %d\n\t->Horario Previso: %d",pMatriz->M[MDecolagem][MPrevisao].Numero_de_Voos,MDecolagem,MPrevisao );
     }
 }
 

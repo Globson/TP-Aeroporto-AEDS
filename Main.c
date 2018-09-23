@@ -34,9 +34,9 @@ int main(int argc, char const *argv[]) {
       InicializaVoo(&Voo);
       SetVID(&Voo);
       Rodape();
-      printf("\t->Formato da hora: HH:MM ->24Hrs\n\n");
+      printf("\t->Formato da hora: HH:MM ->24Hrs\n");
       while(1){
-      printf("Entre com o horario de decolagem do Voo:");
+      printf("\nEntre com o horario de decolagem do Voo:");
       scanf("%s",Hd);
       if(strcmp(Hd,"23:59") <= 0){break;}
       else{printf("Entrada invalida!\n");}}
@@ -130,14 +130,14 @@ int main(int argc, char const *argv[]) {
           printf("Opcao invalida!\n");}}
       if(b == 1){ //Apenas nas hora de decolagem e pouso//
         Rodape();
-        printf("\t->Formato da hora: HH:MM ->24Hrs\n\n");
+        printf("\t->Formato da hora: HH:MM ->24Hrs\n");
         while(1){
-        printf("Digite o horario de decolagem:");
+        printf("\nDigite o horario de decolagem:");
         scanf("%s",horaDec);
         if(strcmp(horaDec,"23:59") <= 0){break;}
         else{printf("Entrada invalida!\n");}}
         while(1){
-        printf("Digite o horario de pouso:");
+        printf("\nDigite o horario de pouso:");
         scanf("%s",horaPou);
         if(strcmp(horaPou,"23:59") <= 0){break;}
         else{printf("Entrada invalida!\n");}}
@@ -145,9 +145,9 @@ int main(int argc, char const *argv[]) {
         Rodape();}
       if(b == 2){ //Apenas na hora de decolagem//
         Rodape();
-        printf("\t->Formato da hora: HH:MM ->24Hrs\n\n");
+        printf("\t->Formato da hora: HH:MM ->24Hrs\n");
         while(1){
-        printf("Digite o horario de decolagem:");
+        printf("\nDigite o horario de decolagem:");
         scanf("%s",horaDec);
         if(strcmp(horaDec,"23:59") <= 0){break;}
         else{printf("Entrada invalida!\n");}}
@@ -155,9 +155,9 @@ int main(int argc, char const *argv[]) {
         Rodape();}
       if(b == 3){ //Apenas na hora de pouso//
         Rodape();
-        printf("\t->Formato da hora: HH:MM ->24Hrs\n\n");
+        printf("\t->Formato da hora: HH:MM ->24Hrs\n");
         while(1){
-        printf("Digite o horario de pouso:");
+        printf("\nDigite o horario de pouso:");
         scanf("%s",horaPou);
         if(strcmp(horaPou,"23:59") <= 0){break;}
         else{printf("Entrada invalida!\n");}}
@@ -308,7 +308,8 @@ int main(int argc, char const *argv[]) {
               Rodape();}
 
             if(strcmp(comparador,"h") == 0){ //Imprime todos voos cadastrados//
-              Imprimir_Matriz(&Matriz);}
+              Imprimir_Matriz(&Matriz);
+              Rodape();}
 
             if(strcmp(comparador,"i") == 0){ //Encontrar faixa de voos maior//
               Encontrar_Faixa_Voos_Maior(&Matriz);
