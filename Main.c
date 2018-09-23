@@ -35,10 +35,16 @@ int main(int argc, char const *argv[]) {
       SetVID(&Voo);
       Rodape();
       printf("\t->Formato da hora: HH:MM ->24Hrs\n\n");
+      while(1){
       printf("Entre com o horario de decolagem do Voo:");
       scanf("%s",Hd);
+      if(strcmp(Hd,"23:59") <= 0){break;}
+      else{printf("Entrada invalida!\n");}}
+      while(1){
       printf("\nEntre com o horario de pouso do Voo:");
       scanf("%s",Hp);
+      if(strcmp(Hp,"23:59") <= 0){break;}
+      else{printf("Entrada invalida!\n");}}
       printf("\nEntre com o numero da pista:");
       scanf("%d",&Pista);
       printf("\nEntre com o nome do aeroporto de partida do Voo:");
@@ -125,24 +131,36 @@ int main(int argc, char const *argv[]) {
       if(b == 1){ //Apenas nas hora de decolagem e pouso//
         Rodape();
         printf("\t->Formato da hora: HH:MM ->24Hrs\n\n");
+        while(1){
         printf("Digite o horario de decolagem:");
         scanf("%s",horaDec);
+        if(strcmp(horaDec,"23:59") <= 0){break;}
+        else{printf("Entrada invalida!\n");}}
+        while(1){
         printf("Digite o horario de pouso:");
         scanf("%s",horaPou);
+        if(strcmp(horaPou,"23:59") <= 0){break;}
+        else{printf("Entrada invalida!\n");}}
         Imprimir_Voos_Decolagem_Pouso(&Matriz,horaDec,horaPou);
         Rodape();}
       if(b == 2){ //Apenas na hora de decolagem//
         Rodape();
         printf("\t->Formato da hora: HH:MM ->24Hrs\n\n");
+        while(1){
         printf("Digite o horario de decolagem:");
         scanf("%s",horaDec);
+        if(strcmp(horaDec,"23:59") <= 0){break;}
+        else{printf("Entrada invalida!\n");}}
         Imprimir_Voos_Decolagem(&Matriz,horaDec);
         Rodape();}
       if(b == 3){ //Apenas na hora de pouso//
         Rodape();
         printf("\t->Formato da hora: HH:MM ->24Hrs\n\n");
+        while(1){
         printf("Digite o horario de pouso:");
         scanf("%s",horaPou);
+        if(strcmp(horaPou,"23:59") <= 0){break;}
+        else{printf("Entrada invalida!\n");}}
         Imprimir_Voos_Pouso(&Matriz,horaPou);
         Rodape();}
       if(b == 4){ //Todos os Voos//
@@ -193,12 +211,12 @@ int main(int argc, char const *argv[]) {
     scanf("%s",nome_arquivo);
     f = fopen(nome_arquivo,"r");
     if(f == NULL){
-      printf("\n\tErro!Nao foi possivel abrir arquivo!\n");}
+      printf("\n\t->Erro!Nao foi possivel abrir arquivo!\n");}
       else{
-        printf("\n\tArquivo aberto com sucesso!\n");
+        printf("\n\t->Arquivo aberto com sucesso!\n");
         while(fscanf(f,"%s",comparador) != EOF){
             if(strcmp(comparador,"a") == 0){ //Inicia Matriz//
-              printf("\n\tA operacao inicia ja foi realizada!");
+              printf("\n\t->A operacao inicia ja foi realizada!");
               Rodape();}
 
             if(strcmp(comparador,"b") == 0){ //Insere Voo por arquivo//
@@ -217,14 +235,18 @@ int main(int argc, char const *argv[]) {
               SetPista(&Voo,A_pista);
               SetAeroporto_Chegada(&Voo,Ac);
               SetAeroporto_Partida(&Voo,Ap);
-              aux = Insere_Voo_Matriz(&Matriz,&Voo);
+              if(strcmp(Hd,"23:59") <= 0 && strcmp(Hp,"23:59") <= 0){
+              aux = Insere_Voo_Matriz(&Matriz,&Voo);}
+              else{aux=2;}
               if(aux==1){
-                printf("\n\tUm Voo inserido por arquivo com sucesso!");
+                printf("\n\t->Um Voo inserido por arquivo com sucesso!");
                 Rodape();
-              }else{
-                printf("\n\tVoo nao inserido por arquivo por falta de memoria!");
-                Rodape();
-              }
+              }else if(aux==2){
+                printf("\n\t->Voo nao inserido por arquivo devido a entrada invalida!");
+                Rodape();}
+              else{
+                printf("\n\t->Voo nao inserido por arquivo por falta de memoria!");
+                Rodape();}
             }
             if(strcmp(comparador,"c") == 0){ //Remove Voo por arquivo//
               TVoo Voo_R;
@@ -233,7 +255,7 @@ int main(int argc, char const *argv[]) {
               fscanf(f,"%d",&VID_A);
               aux = Remove_Voo_Matriz(&Matriz,&Voo_R,VID_A);
               if(aux == 1){
-                printf("\n\tUm Voo removido com sucesso por arquivo!\n");
+                printf("\n\t->Um Voo removido com sucesso por arquivo!\n");
                 Rodape();
                 }else{
                   printf("\n\t->Falha ao remover Voo por arquivo! Voo nao encontrado.");
@@ -264,19 +286,25 @@ int main(int argc, char const *argv[]) {
               char Hd[10],Hp[10];
               fscanf(f,"%s",Hd);
               fscanf(f,"%s",Hp);
-              Imprimir_Voos_Decolagem_Pouso(&Matriz,Hd,Hp);
+              if(strcmp(Hd,"23:59") <= 0 && strcmp (Hp,"23:59") <= 0){
+              Imprimir_Voos_Decolagem_Pouso(&Matriz,Hd,Hp);}
+              else{printf("\n\t->Entrada por arquivo de horarios de decolagem e pouso invalidas!");}
               Rodape();}
 
             if(strcmp(comparador,"f") == 0){ //Imprime Voos decolagem//
               char Hd[10];
               fscanf(f,"%s",Hd);
-              Imprimir_Voos_Decolagem(&Matriz,Hd);
+              if(strcmp(Hd,"23:59") <= 0){
+              Imprimir_Voos_Decolagem(&Matriz,Hd);}
+              else{printf("\n\t->Entrada por arquivo de horario de decolagem invalida!");}
               Rodape();}
 
             if(strcmp(comparador,"g") == 0){ //Imprime Voos de pouso//
               char Hp[10];
               fscanf(f,"%s",Hp);
-              Imprimir_Voos_Pouso(&Matriz,Hp);
+              if(strcmp(Hp,"23:59") <= 0){
+              Imprimir_Voos_Pouso(&Matriz,Hp);}
+              else{printf("\n\t->Entrada por arquivo de horario de pouso invalida!");}
               Rodape();}
 
             if(strcmp(comparador,"h") == 0){ //Imprime todos voos cadastrados//
