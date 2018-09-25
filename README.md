@@ -63,6 +63,6 @@ Veja [LICENSE](https://github.com/Globson/TP-Aeroporto-AEDS/blob/master/LICENSE)
 * **Samuel Sena** - [Globson](https://github.com/Globson)
 * **Aryel Penido** - [AryelPenido](https://github.com/AryelPenido)
 
-## Agredecimentos
+## Agradecimentos
 
 * **Pablo Miranda** - [DarkPalladium](https://github.com/DarkPalladium)
